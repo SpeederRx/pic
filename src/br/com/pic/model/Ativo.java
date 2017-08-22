@@ -1,4 +1,4 @@
-package pic.model;
+package br.com.pic.model;
 
 public class Ativo {
 	

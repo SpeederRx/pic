@@ -1,6 +1,6 @@
-package pic.model;
+package br.com.pic.model;
 
-public class ProprietarioAtivo {
+public class SocioAtivo {
 	
 	private Integer id;
 	private Socio socio;

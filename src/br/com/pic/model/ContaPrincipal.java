@@ -1,4 +1,4 @@
-package pic.model;
+package br.com.pic.model;
 import java.util.Date;
 import java.util.List;
 
