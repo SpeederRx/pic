@@ -3,7 +3,7 @@ package br.com.pic.model;
 public class Lancamento {
 	
 	private Long id;
-	private ContaPrincipal conta;
+	private ContaPrincipal contaPrincipal;
 	private Ativo ativo;
 	private Proposta proposta;
 	private Double valorTotalLanc;
@@ -12,18 +12,17 @@ public class Lancamento {
 	private TipoLancamento tipoLancamento;
 	private Operador operador;
 	private EstadoLancamento estadoLancamento;
-	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ContaPrincipal getConta() {
-		return conta;
+	public ContaPrincipal getContaPrincipal() {
+		return contaPrincipal;
 	}
-	public void setConta(ContaPrincipal conta) {
-		this.conta = conta;
+	public void setContaPrincipal(ContaPrincipal contaPrincipal) {
+		this.contaPrincipal = contaPrincipal;
 	}
 	public Ativo getAtivo() {
 		return ativo;
@@ -74,4 +73,6 @@ public class Lancamento {
 		this.estadoLancamento = estadoLancamento;
 	}
 	
+	
+		
 }
