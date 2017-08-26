@@ -3,18 +3,46 @@ package br.com.pic.model;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@Entity
+@Table(name = "proposta")
 public class Proposta {
 	
+	@Id
+	@Column(name = "ID")
 	private Long id;
-	private TipoProposta tipoProposta;
+	
+	@Column(name = "TIPO_PROPOSTA")
+	private Integer tipoProposta;
+	
+	@Column(name = "DATA_INICIO")
 	private Date dataInicio;
+	
+	@Column(name = "DATA_FIM")
 	private Date dataFim;
+	
+	@Column(name = "MIN_COTAS")
 	private Double minCotas;
+	
+	@Column(name = "MAX_COTAS")
 	private Double maxCotas;
-	private EstadoProposta estadoProposta;
+	
+	@Column(name = "ESTADO_PROPOSTA")
+	private Integer estadoProposta;
+	
+	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OrderBy(value = "id")
 	private List<Lancamento> lancamentos;
+	
+	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OrderBy(value = "id")
 	private List<Participante> participantes;
+	
+	@Column(name = "DESCRICAO")
 	private String descricao;
+	
+	@Column(name = "PERCENT_LUCRO")
 	private Double percentLucro;
 	
 	public Long getId() {
@@ -23,10 +51,10 @@ public class Proposta {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public TipoProposta getTipoProposta() {
+	public Integer getTipoProposta() {
 		return tipoProposta;
 	}
-	public void setTipoProposta(TipoProposta tipoProposta) {
+	public void setTipoProposta(Integer tipoProposta) {
 		this.tipoProposta = tipoProposta;
 	}
 	public Date getDataInicio() {
@@ -53,10 +81,10 @@ public class Proposta {
 	public void setMaxCotas(Double maxCotas) {
 		this.maxCotas = maxCotas;
 	}
-	public EstadoProposta getEstadoProposta() {
+	public Integer getEstadoProposta() {
 		return estadoProposta;
 	}
-	public void setEstadoProposta(EstadoProposta estadoProposta) {
+	public void setEstadoProposta(Integer estadoProposta) {
 		this.estadoProposta = estadoProposta;
 	}
 	public List<Lancamento> getLancamentos() {
