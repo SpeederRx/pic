@@ -2,7 +2,7 @@ package br.com.pic.model;
 
 public class Endereco {
 	
-	private Integer id;
+	private Long id;
 	private String rua;
 	private Integer numero;
 	private String complemento;	
@@ -12,10 +12,10 @@ public class Endereco {
 	private String cep;
 	private String pais;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getRua() {

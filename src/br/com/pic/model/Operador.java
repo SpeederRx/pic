@@ -2,21 +2,14 @@ package br.com.pic.model;
 
 public class Operador extends Pessoa {
 	
-	private Integer id;
-	private Integer nivelAcesso;
+	private Long nivelAcesso;
 	private String senha;
 	private String descricao;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getNivelAcesso() {
+	public Long getNivelAcesso() {
 		return nivelAcesso;
 	}
-	public void setNivelAcesso(Integer nivelAcesso) {
+	public void setNivelAcesso(Long nivelAcesso) {
 		this.nivelAcesso = nivelAcesso;
 	}
 	public String getSenha() {

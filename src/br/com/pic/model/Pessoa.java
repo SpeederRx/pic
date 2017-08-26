@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Pessoa {
 	
-	private Integer id;
+	private Long id;
 	private String nome;
 	private String cpf;
 	private Date dataNasc;
@@ -12,10 +12,10 @@ public class Pessoa {
 	private Endereco endereco;
 	private String telefone;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {

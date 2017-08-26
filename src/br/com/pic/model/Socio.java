@@ -2,18 +2,11 @@ package br.com.pic.model;
 
 public class Socio extends Pessoa {
 	
-	private Integer id;
 	private String contaMovimento;
 	private String senha;
 	private  double classificacao; 
 	private TipoEnvio tipoEnvio;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getContaMovimento() {
 		return contaMovimento;
 	}
