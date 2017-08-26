@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Participante {
 	
-	private Integer id;
+	private Long id;
 	private Date dataVinculo;
 	private Date dataDesvinculo;
 	private Boolean proponente;
 	private Double cotas;
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public Date getDataVinculo() {
