@@ -2,18 +2,49 @@ package br.pic.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "operador")
 public class Operador{
 	
+	@Id
+	@Column(name = "ID")
 	private Long id;
+	
+	@Column(name = "NOME")
 	private String nome;
+	
+	@Column(name = "CPF")
 	private String cpf;
+	
+	@Column(name = "DATA_NASC")
 	private Date dataNasc;
+	
+	@Column(name = "EMAIL")
 	private String email;
+	
+	@OneToOne
+	@JoinColumn(name = "ID_ENDERECO", insertable = true, updatable = true)
 	private Endereco endereco;
+	
+	@Column(name = "telefone")
 	private String telefone;
+	
+	@Column(name = "NIVEL_ACESSO")
 	private Long nivelAcesso;
+	
+	@Column(name = "SENHA")
 	private String senha;
+	
+	@Column(name = "DESCRICAO")
 	private String descricao;
+	
 	public Long getId() {
 		return id;
 	}

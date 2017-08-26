@@ -3,18 +3,53 @@ package br.pic.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "proposta")
 public class Proposta {
 	
+	@Id
+	@Column(name = "ID")
 	private Long id;
-	private TipoProposta tipoProposta;
-	private Date dtInicio;
-	private Date dtFim;
+	
+	@Column(name = "TIPO_PROPOSTA")
+	private Integer tipoProposta;
+	
+	@Column(name = "DATA_INICIO")
+	private Date dataInicio;
+	
+	@Column(name = "DATA_FIM")
+	private Date dataFim;
+	
+	@Column(name = "MIN_COTAS")
 	private Double minCotas;
+	
+	@Column(name = "MAX_COTAS")
 	private Double maxCotas;
-	private EstadoProposta status;
+	
+	@Column(name = "ESTADO_PROPOSTA")
+	private Integer estadoProposta;
+	
+	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OrderBy(value = "id")
 	private List<Lancamento> lancamentos;
+	
+	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OrderBy(value = "id")
 	private List<Participante> participantes;
+	
+	@Column(name = "DESCRICAO")
 	private String descricao;
+	
+	@Column(name = "PERCENT_LUCRO")
 	private Double percentLucro;
 	
 	public Long getId() {
@@ -23,23 +58,23 @@ public class Proposta {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public TipoProposta getTipoProposta() {
+	public Integer getTipoProposta() {
 		return tipoProposta;
 	}
-	public void setTipoProposta(TipoProposta tipoProposta) {
+	public void setTipoProposta(Integer tipoProposta) {
 		this.tipoProposta = tipoProposta;
 	}
-	public Date getDtInicio() {
-		return dtInicio;
+	public Date getDataInicio() {
+		return dataInicio;
 	}
-	public void setDtInicio(Date dtInicio) {
-		this.dtInicio = dtInicio;
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
 	}
-	public Date getDtFim() {
-		return dtFim;
+	public Date getDataFim() {
+		return dataFim;
 	}
-	public void setDtFim(Date dtFim) {
-		this.dtFim = dtFim;
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
 	}
 	public Double getMinCotas() {
 		return minCotas;
@@ -53,11 +88,11 @@ public class Proposta {
 	public void setMaxCotas(Double maxCotas) {
 		this.maxCotas = maxCotas;
 	}
-	public EstadoProposta getStatus() {
-		return status;
+	public Integer getEstadoProposta() {
+		return estadoProposta;
 	}
-	public void setStatus(EstadoProposta status) {
-		this.status = status;
+	public void setEstadoProposta(Integer estadoProposta) {
+		this.estadoProposta = estadoProposta;
 	}
 	public List<Lancamento> getLancamentos() {
 		return lancamentos;
@@ -84,6 +119,4 @@ public class Proposta {
 		this.percentLucro = percentLucro;
 	}
 	
-
-
 }
