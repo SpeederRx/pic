@@ -3,9 +3,9 @@
 *.class
 *.bin
 .gradle/*
-.classpath
-.project
-.idea
+*.classpath/
+*.project/
+*.idea/
 .settings/*
-*.jar
+*.jar/
 *.settings/
