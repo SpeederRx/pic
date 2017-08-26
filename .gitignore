@@ -3,8 +3,8 @@
 *.class
 *.bin
 .gradle/*
-*.classpath/
-*.project/
+*.classpath
+*.project
 *.idea/
 .settings/*
 *.jar/
