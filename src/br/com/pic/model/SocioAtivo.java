@@ -1,10 +1,22 @@
 package br.com.pic.model;
 
+@Entity
+@Table(name = "socio_ativo") 
 public class SocioAtivo {
 	
+	@Id
+	@Column(name = "ID")
 	private Long id;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_SOCIO", insertable = false, updatable = false)
 	private Socio socio;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_ATIVO", insertable = false, updatable = false)
 	private Ativo ativo;
+	
+	@Column(name = "COTAS")
 	private Double cotas;
 	
 	public Long getId() {

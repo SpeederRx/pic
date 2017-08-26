@@ -2,14 +2,30 @@ package br.com.pic.model;
 
 import java.util.Date;
 
-public class Participante {
+@Entity
+@Table(name = "participante")
+public class Participante {	
 	
+	@Id
+	@Column(name = "ID")
 	private Long id;
+	
+	@Column(name = "DATA_VINCULO")
 	private Date dataVinculo;
+	
+	@Column(name = "DATA_DESVINCULO")
 	private Date dataDesvinculo;
+	
+	@Column(name = "PROPONENTE")
 	private Boolean proponente;
+	
+	@Column(name = "COTAS")
 	private Double cotas;
+	
+	@OneToOne(mappedBy = "socio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Socio socio;
+	
+	@OneToOne(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Proposta proposta;
 	
 	public Long getId() {
