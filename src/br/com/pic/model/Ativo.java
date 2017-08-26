@@ -4,7 +4,7 @@ public class Ativo {
 	
 	private Long id;
 	private String descricao;
-	private  TipoAtivo tipoAtivo;
+	private TipoAtivo tipoAtivo;
 	
 	public Long getId() {
 		return id;

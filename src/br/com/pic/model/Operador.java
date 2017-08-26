@@ -14,6 +14,7 @@ public class Operador{
 	private Long nivelAcesso;
 	private String senha;
 	private String descricao;
+	
 	public Long getId() {
 		return id;
 	}

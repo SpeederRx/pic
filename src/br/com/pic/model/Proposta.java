@@ -7,11 +7,11 @@ public class Proposta {
 	
 	private Long id;
 	private TipoProposta tipoProposta;
-	private Date dtInicio;
-	private Date dtFim;
+	private Date dataInicio;
+	private Date dataFim;
 	private Double minCotas;
 	private Double maxCotas;
-	private EstadoProposta status;
+	private EstadoProposta estadoProposta;
 	private List<Lancamento> lancamentos;
 	private List<Participante> participantes;
 	private String descricao;
@@ -29,17 +29,17 @@ public class Proposta {
 	public void setTipoProposta(TipoProposta tipoProposta) {
 		this.tipoProposta = tipoProposta;
 	}
-	public Date getDtInicio() {
-		return dtInicio;
+	public Date getDataInicio() {
+		return dataInicio;
 	}
-	public void setDtInicio(Date dtInicio) {
-		this.dtInicio = dtInicio;
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
 	}
-	public Date getDtFim() {
-		return dtFim;
+	public Date getDataFim() {
+		return dataFim;
 	}
-	public void setDtFim(Date dtFim) {
-		this.dtFim = dtFim;
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
 	}
 	public Double getMinCotas() {
 		return minCotas;
@@ -53,11 +53,11 @@ public class Proposta {
 	public void setMaxCotas(Double maxCotas) {
 		this.maxCotas = maxCotas;
 	}
-	public EstadoProposta getStatus() {
-		return status;
+	public EstadoProposta getEstadoProposta() {
+		return estadoProposta;
 	}
-	public void setStatus(EstadoProposta status) {
-		this.status = status;
+	public void setEstadoProposta(EstadoProposta estadoProposta) {
+		this.estadoProposta = estadoProposta;
 	}
 	public List<Lancamento> getLancamentos() {
 		return lancamentos;
@@ -84,6 +84,4 @@ public class Proposta {
 		this.percentLucro = percentLucro;
 	}
 	
-
-
 }

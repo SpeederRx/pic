@@ -15,6 +15,7 @@ public class Socio {
 	private String senha;
 	private  double classificacao; 
 	private TipoEnvio tipoEnvio;
+	
 	public Long getId() {
 		return id;
 	}

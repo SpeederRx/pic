@@ -9,7 +9,7 @@ public class ContaPrincipal {
 	private Date dtAbertura;
 	private Double saldoAtual;
 	private List<Lancamento> lancamentos;
-	private EstadoConta status;
+	private EstadoConta estadoConta;
 	
 	public Long getId() {
 		return id;
@@ -41,13 +41,11 @@ public class ContaPrincipal {
 	public void setLancamentos(List<Lancamento> lancamentos) {
 		this.lancamentos = lancamentos;
 	}
-	public EstadoConta getStatus() {
-		return status;
+	public EstadoConta getEstadoConta() {
+		return estadoConta;
 	}
-	public void setStatus(EstadoConta status) {
-		this.status = status;
+	public void setEstadoConta(EstadoConta estadoConta) {
+		this.estadoConta = estadoConta;
 	}
 	
-	
-
 }

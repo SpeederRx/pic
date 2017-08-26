@@ -11,7 +11,7 @@ public class Lancamento {
 	private Integer qtdeLancada;
 	private TipoLancamento tipoLancamento;
 	private Operador operador;
-	private EstadoLancamento status;
+	private EstadoLancamento estadoLancamento;
 	
 	public Long getId() {
 		return id;
@@ -67,13 +67,11 @@ public class Lancamento {
 	public void setOperador(Operador operador) {
 		this.operador = operador;
 	}
-	public EstadoLancamento getStatus() {
-		return status;
+	public EstadoLancamento getEstadoLancamento() {
+		return estadoLancamento;
 	}
-	public void setStatus(EstadoLancamento status) {
-		this.status = status;
-	} 
-	
-	
+	public void setEstadoLancamento(EstadoLancamento estadoLancamento) {
+		this.estadoLancamento = estadoLancamento;
+	}
 	
 }
