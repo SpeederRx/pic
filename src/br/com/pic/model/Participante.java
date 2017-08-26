@@ -9,6 +9,8 @@ public class Participante {
 	private Date dataDesvinculo;
 	private Boolean proponente;
 	private Double cotas;
+	private Socio socio;
+	private Proposta proposta;
 	
 	public Long getId() {
 		return id;
@@ -40,6 +42,18 @@ public class Participante {
 	public void setCotas(Double cotas) {
 		this.cotas = cotas;
 	}
+	public Socio getSocio() {
+		return socio;
+	}
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
+	public Proposta getProposta() {
+		return proposta;
+	}
+	public void setProposta(Proposta proposta) {
+		this.proposta = proposta;
+	}
 	
-	
+		
 }
