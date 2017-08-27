@@ -1,4 +1,4 @@
-package br.pic.model;
+package br.pic.commun;
 
 public enum EstadoProposta {
 	

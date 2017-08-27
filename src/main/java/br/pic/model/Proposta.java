@@ -7,9 +7,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +19,7 @@ public class Proposta {
 	
 	@Id
 	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "TIPO_PROPOSTA")
@@ -39,11 +41,9 @@ public class Proposta {
 	private Integer estadoProposta;
 	
 	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@OrderBy(value = "id")
 	private List<Lancamento> lancamentos;
 	
 	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@OrderBy(value = "id")
 	private List<Participante> participantes;
 	
 	@Column(name = "DESCRICAO")

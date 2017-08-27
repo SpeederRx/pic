@@ -1,16 +1,15 @@
-package br.pic.model;
+package br.pic.commun;
 
-public enum TipoLancamento {
-	
-	DEBITO(1, "Debito"),
-	CREDITO(2, "Credito"),
-	PROVISIONAMENTO(3, "Provisionamento"),
+public enum TipoEnvio {
+
+	EMAIL(1, "E-mail"),
+	SMS(2, "SMS"),
 	;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private TipoLancamento(Integer codigo, String descricao) {
+	private TipoEnvio(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -22,5 +21,5 @@ public enum TipoLancamento {
 	public String getDescricao() {
 		return descricao;
 	}
-
+	
 }

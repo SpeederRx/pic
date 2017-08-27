@@ -1,15 +1,16 @@
-package br.pic.model;
+package br.pic.commun;
 
-public enum EstadoConta {
+public enum TipoLancamento {
 	
-	ATIVA(1, "Ativa"),
-	INATIVA(2, "Inativa"),
+	DEBITO(1, "Debito"),
+	CREDITO(2, "Credito"),
+	PROVISIONAMENTO(3, "Provisionamento"),
 	;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private EstadoConta(Integer codigo, String descricao) {
+	private TipoLancamento(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}

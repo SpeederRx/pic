@@ -1,16 +1,16 @@
-package br.pic.model;
+package br.pic.commun;
 
-public enum EstadoLancamento {
+public enum TipoAtivo {
 	
-	EFETIVAD0(1, "Efetivado"),
-	PENDENTE(2, "Pendente"),
-	CANCELADO(3, "Cancelado"),
+	MOEDA(1, "Moeda"),
+	TITULO(2, "Titulo"),
+	ACAO(3, "Acao"),
 	;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private EstadoLancamento(Integer codigo, String descricao) {
+	private TipoAtivo(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -22,5 +22,4 @@ public enum EstadoLancamento {
 	public String getDescricao() {
 		return descricao;
 	}
-
 }

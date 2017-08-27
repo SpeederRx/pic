@@ -1,15 +1,15 @@
-package br.pic.model;
+package br.pic.commun;
 
-public enum TipoEnvio {
-
-	EMAIL(1, "E-mail"),
-	SMS(2, "SMS"),
+public enum EstadoConta {
+	
+	ATIVA(1, "Ativa"),
+	INATIVA(2, "Inativa"),
 	;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private TipoEnvio(Integer codigo, String descricao) {
+	private EstadoConta(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -21,5 +21,5 @@ public enum TipoEnvio {
 	public String getDescricao() {
 		return descricao;
 	}
-	
+
 }

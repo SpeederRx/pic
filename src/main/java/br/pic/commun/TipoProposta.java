@@ -1,16 +1,17 @@
-package br.pic.model;
+package br.pic.commun;
 
-public enum TipoAtivo {
+public enum TipoProposta {
 	
-	MOEDA(1, "Moeda"),
-	TITULO(2, "Titulo"),
-	ACAO(3, "Acao"),
+	COMPRA(1, "Compra"),
+	VENDA(2, "Venda"),
+	APORTE(3, "Aporte"),
+	RETIRADA(4, "Retirada"),
 	;
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private TipoAtivo(Integer codigo, String descricao) {
+	private TipoProposta(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -22,4 +23,5 @@ public enum TipoAtivo {
 	public String getDescricao() {
 		return descricao;
 	}
+
 }

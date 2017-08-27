@@ -2,8 +2,11 @@ package br.pic.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -15,6 +18,7 @@ public class Socio {
 	
 	@Id
 	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "NOME")
@@ -29,8 +33,8 @@ public class Socio {
 	@Column(name = "EMAIL")
 	private String email;
 	
-	@OneToOne
-	@JoinColumn(name = "ID_ENDERECO", insertable = true, updatable = true)
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ID_ENDERECO", updatable = true, insertable = true)
 	private Endereco endereco;
 	
 	@Column(name = "TELEFONE")

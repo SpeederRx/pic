@@ -2,7 +2,10 @@ package br.pic.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -12,17 +15,19 @@ public class Lancamento {
 	
 	@Id
 	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne()
-	@Column(name = "ID_CONTA_PRINCIPAL")
+	@ManyToOne
+	@JoinColumn(name = "ID_CONTA_PRINCIPAL")
 	private ContaPrincipal contaPrincipal;
 	
-	@Column(name = "ID_ATIVO")
+	@ManyToOne
+	@JoinColumn(name = "ID_ATIVO", insertable = false, updatable = false)
 	private Ativo ativo;
 	
-	@ManyToOne()
-	@Column(name = "ID_PROPOSTA")
+	@ManyToOne
+	@JoinColumn(name = "ID_PROPOSTA")
 	private Proposta proposta;
 	
 	@Column(name = "VALOR_TOTAL_LANC")
@@ -37,7 +42,8 @@ public class Lancamento {
 	@Column(name = "TIPO_LANCAMENTO")
 	private Integer tipoLancamento;
 	
-	@Column(name = "ID_OPERADOR")
+	@ManyToOne
+	@JoinColumn(name = "ID_OPERADOR", insertable = false, updatable = false)
 	private Operador operador;
 	
 	@Column(name = "ESTADO_LANCAMENTO")
