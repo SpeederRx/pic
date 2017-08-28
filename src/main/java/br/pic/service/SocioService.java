@@ -26,4 +26,6 @@ public class SocioService implements PicService<Socio>{
 		validar(obj);
 		socioDao.salvar(obj);
 	}
+	
+	
 }

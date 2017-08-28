@@ -38,6 +38,9 @@ public class ContaPrincipal {
 	
 	@Column(name = "ESTADO_CONTA")
 	private Integer estadoConta;
+	
+	@Column(name = "CODIGO_CONTA")
+	private String codigoConta;
 
 	public Long getId() {
 		return id;
@@ -86,5 +89,15 @@ public class ContaPrincipal {
 	public void setEstadoConta(Integer estadoConta) {
 		this.estadoConta = estadoConta;
 	}
+
+	public String getCodigoConta() {
+		return codigoConta;
+	}
+
+	public void setCodigoConta(String codigoConta) {
+		this.codigoConta = codigoConta;
+	}
+
+	
 	
 }
