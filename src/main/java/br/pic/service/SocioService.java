@@ -19,6 +19,27 @@ public class SocioService implements PicService<Socio>{
 		if(obj == null) {
 			throw new IllegalArgumentException("Objeto não pode ser nulo.");
 		}
+		
+//		if(StringUtils.isNullOrEmpty(aluno.getNome())){
+//			return false;
+//		}
+//		if(StringUtils.isNullOrEmpty(aluno.getEmail())){
+//			return false;
+//		}
+//		if(aluno.getCampus() == null){
+//			return false;
+//		}
+//		if(aluno.getCurso() == null){
+//			return false;
+//		}
+//		if(aluno.getTurno() == null){
+//			return false;
+//		}
+//		if (aluno.getPeriodo() == null) {
+//			return false;
+//		}
+		
+		
 	}
 	
 	@Override
