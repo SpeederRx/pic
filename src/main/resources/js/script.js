@@ -305,3 +305,99 @@ smoothScroll.init({
       callbackAfter: function ( toggle, anchor ) {}
     });
 
+
+//////// -- Forca de Senha -- /////////
+
+function verifica(){
+    senha = document.getElementById("InputValidaSenha").value;
+    forca = 0;
+    mostra = document.getElementById("mostra");
+    if((senha.length >= 4) && (senha.length <= 7)){
+        forca += 10;
+    }else if(senha.length>7){
+        forca += 25;
+    }
+    if(senha.match(/[a-z]+/)){
+        forca += 10;
+    }
+    if(senha.match(/[A-Z]+/)){
+        forca += 20;
+    }
+    if(senha.match(/d+/)){
+        forca += 20;
+    }
+    if(senha.match(/W+/)){
+        forca += 25;
+    }
+    return mostra_res();
+}
+function mostra_res(){
+    if(forca < 30){
+        mostra.innerHTML = '<tr><td bgcolor="red" width="'+(forca*8)+'"></td><td>Fraca </td></tr>';
+    }else if((forca >= 30) && (forca < 60)){
+        mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+(forca*8)+'"></td><td>Média </td></tr>';;
+    }else if((forca >= 60) && (forca < 85)){
+        mostra.innerHTML = '<tr><td bgcolor="blue" width="'+(forca*8)+'"></td><td>Forte </td></tr>';
+    }else{
+        mostra.innerHTML = '<tr><td bgcolor="green" width="'+(forca*8)+'"></td><td>Excelente </td></tr>';
+    }
+}
+
+//////// -- CPF Validate -- /////////
+
+function validarCPF(cpf) {  
+    cpf = cpf.replace(/[^\d]+/g,'');    
+    if(cpf == '') return false; 
+    // Elimina CPFs invalidos conhecidos    
+    if (cpf.length != 11 || 
+        cpf == "00000000000" || 
+        cpf == "11111111111" || 
+        cpf == "22222222222" || 
+        cpf == "33333333333" || 
+        cpf == "44444444444" || 
+        cpf == "55555555555" || 
+        cpf == "66666666666" || 
+        cpf == "77777777777" || 
+        cpf == "88888888888" || 
+        cpf == "99999999999")
+            return false;       
+    // Valida 1o digito 
+    add = 0;    
+    for (i=0; i < 9; i ++)       
+        add += parseInt(cpf.charAt(i)) * (10 - i);  
+        rev = 11 - (add % 11);  
+        if (rev == 10 || rev == 11)     
+            rev = 0;    
+        if (rev != parseInt(cpf.charAt(9)))     
+            return false;       
+    // Valida 2o digito 
+    add = 0;    
+    for (i = 0; i < 10; i ++)        
+        add += parseInt(cpf.charAt(i)) * (11 - i);  
+    rev = 11 - (add % 11);  
+    if (rev == 10 || rev == 11) 
+        rev = 0;    
+    if (rev != parseInt(cpf.charAt(10)))
+        return false;       
+    return true;   
+}
+
+function resultCPF(){
+    cpf = document.getElementById("InputCPF").value;
+    retorno = validarCPF(cpf);
+    campo = document.getElementById("InputCPF");
+
+    if(cpf == false){
+        mostra.innerHTML = '<tr><td bgcolor="red" width="'+(forca*8)+'"></td><td>Fraca </td></tr>';
+    }else if((forca >= 30) && (forca < 60)){
+        mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+(forca*8)+'"></td><td>Média </td></tr>';;
+    }else if((forca >= 60) && (forca < 85)){
+        mostra.innerHTML = '<tr><td bgcolor="blue" width="'+(forca*8)+'"></td><td>Forte </td></tr>';
+    }else{
+        mostra.innerHTML = '<tr><td bgcolor="green" width="'+(forca*8)+'"></td><td>Excelente </td></tr>';
+    }
+
+}
+
+
+
