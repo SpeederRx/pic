@@ -118,7 +118,7 @@
 					<div class="form-inline">
 						<h1 class="form-group col-sm-12">{{ cpfAlert }}</h1>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control" name="cpf" id="InputCPF" placeholder="CPF" >
+							<input type="text" class="form-control" name="cpf" id="InputCPF" placeholder="CPF" ng-model="cpf">
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="date" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" >
@@ -130,13 +130,15 @@
 							<input type="text" class="form-control" name="nome" id="InputNome"  placeholder="nome" >
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail">
+						    <span ng-show="cadForm.email.$error.email">Not a valid e-mail address</span>
+							<input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="text">
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="password" class="form-control" name="senha" id="InputSenha" placeholder="Senha">
+							<input type="password" class="form-control" name="senha" ng-model="senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()" required="">
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="password" class="form-control" name="validaSenha" id="InputValidaSenha" onkeyup="javascript:verifica()" placeholder="Repita a Senha">
+							<input type="password" class="form-control" name="validaSenha" id="InputValidaSenha" ng-blur="compararSenha()" placeholder="Repita a Senha" ng-model="validaSenha" ng-model-options="{ getterSetter: true }">
+							<span>{{resultadoSenha}}</span>
 						</div>
 						<div class="form-group col-sm-12">
 							<table id="mostra"></table>
@@ -217,10 +219,10 @@
 						</div>
 						<div class="form-group col-sm-6">
 							<label></label>
-							<input type="text" class="form-control" name="numCarteiraDig" id="InputNumCarteiraDig" placeholder="Número da Carteira Digital">
+							<input type="text" class="form-control" name="numCarteiraDig" id="InputNumCarteiraDig" ng-model="carteiraDigital" placeholder="Número da Carteira Digital">
 						</div>
 						<div class="form-group col-sm-12" id='submitCPF'>
-							<input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Validar Carteira" onclick=""/>
+							<input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Validar Carteira" ng-click="validarCarteira()"/>
 						</div>
 					</div>
 					<div class="form-inline" title="Segurança">
@@ -266,7 +268,7 @@
 								Você pode encontrar mais informações sobre como o Google usa e armazena conteúdo na política de privacidade ou termos adicionais de Serviços específicos. Se você enviar comentários ou sugestões sobre nossos Serviços, podemos usar seus comentários ou sugestões sem obrigação para você.
 							</p>
 						</div>
-						<input type="submit" id='send_message' class="btn  btn-lg costom-btn" value="Confirmar cadastro">
+						<input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Confirmar cadastro" ng-click="cadastrarSocio()">
 					</div>
 				</form>
 			</div> <!-- /.col-xs-12 .col-sm-offset-2 .col-sm-8 -->
@@ -383,8 +385,8 @@
 <!-- Custom Script JS -->
 <script src="js/script.js"></script>
 
-<!-- Email JS -->
-<script src="js/email.js"></script>
+<!-- Email JS 
+<script src="js/email.js"></script>-->
 
 <!-- Angular JS files-->
   <script src="js/angular.js"></script>
