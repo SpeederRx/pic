@@ -13,7 +13,7 @@ public class SocioData {
 	private String telefone;
 	private String contaMovimento;
 	private String senha;
-	private double classificacao; 
+	private Double classificacao; 
 	private Integer tipoEnvio;
 
 	public Long getId() {
@@ -88,11 +88,11 @@ public class SocioData {
 		this.senha = senha;
 	}
 
-	public double getClassificacao() {
+	public Double getClassificacao() {
 		return classificacao;
 	}
 
-	public void setClassificacao(double classificacao) {
+	public void setClassificacao(Double classificacao) {
 		this.classificacao = classificacao;
 	}
 

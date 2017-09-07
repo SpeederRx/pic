@@ -5,8 +5,7 @@ import java.util.List;
 
 public class PropostaData {
 	
-private Long id;
-	
+	private Long id;
 	private Integer tipoProposta;
 	private Date dataInicio;
 	private Date dataFim;
