@@ -106,14 +106,14 @@
 </div>
 </header>
 <!-- Cadastro -->
-<section id="contact" class="contact-wrapper section-padding">
+<section id="contact" class="contact-wrapper section-padding" ng-controller="MainController">
 	<div class="container">
 		<div class="row">
 			<div class="wow zoomIn col-xs-12 text-center p-padding">
 				<h1 class="section-title">Cadastre-se</h1>
 				<p>Para poder participar do Clube, basta efetuar seu cadastro.</p>
 			</div><!-- col-xs-12 -->
-			<div class="wow zoomIn col-xs-12 col-sm-12 col-md-8 col-md-offset-2" ng-controller="MainController">
+			<div class="wow zoomIn col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
 				<form name="cadForm" id='contact_form' method="post" action=''>
 					<div class="form-inline">
 						<h1 class="form-group col-sm-12">{{ cpfAlert }}</h1>

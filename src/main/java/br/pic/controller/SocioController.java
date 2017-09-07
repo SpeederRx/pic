@@ -1,7 +1,5 @@
 package br.pic.controller;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
@@ -11,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.pic.exception.PicException;
@@ -41,6 +40,12 @@ public class SocioController {
             return response;
 		}
 		
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<HttpStatus> teste() {
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 }
