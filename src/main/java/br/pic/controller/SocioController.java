@@ -19,7 +19,7 @@ import br.pic.service.SocioService;
 
 @RestController
 @Transactional(rollbackOn=Throwable.class)
-@RequestMapping(value="Socio")
+@RequestMapping(value="socio")
 public class SocioController {
 
 	@Inject
@@ -32,7 +32,7 @@ public class SocioController {
 	public ResponseEntity<HttpStatus> save(@RequestBody SocioData socioData) {
 		
 		try {
-			socioService.salvar(socioPopulate.toModel(socioData));
+			socioService.salvar(socioPopulate.toModel(socioData));	
 		} catch (PicException e) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Erro", e.getLocalizedMessage());

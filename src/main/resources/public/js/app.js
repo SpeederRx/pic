@@ -2,10 +2,36 @@ var appCadastro = angular.module ('appCadastro',[]);
 
 appCadastro.controller('MainController', ['$scope', '$http', function($scope, $http) {
 	$scope.cpfAlert = 'vazio';
+
+	/*/////////////Inicio variáveis para teste///////////////////////*/
+	
+	$scope.socio = {
+			cpf: '05728048900',
+			dataNasc: '',
+			nome: 'John Smith',
+			email: 'email@email.com',
+			senha: 'senha',
+			enderecoData: {
+				rua: '05728048900',
+				numero: 10,
+				complemento: 'casa2',
+				bairro: 'CIC',
+				cidade: 'Curitiba',
+				estado: 'PR',
+				cep: '81050020',
+				pais: 'Brasil'},
+			telefone: '41988887777',
+			contaMovimento: '9878',
+			tipoEnvio: 2,
+			classificacao: 1.0
+	}
+
+
+	/*/////////////Fim variáveis para teste///////////////////////*/
 	$scope.validaCpf = function() { 
 		
 		try {
-			var cpfOriginal = $scope.cpf;
+			var cpfOriginal = $scope.socio.cpf;
 		}
 		catch(err){
 			$scope.cpfAlert = 'Campo Vazio';
@@ -58,7 +84,7 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 	};
 
 	$scope.compararSenha = function(){
-		if($scope.validaSenha != $scope.senha){
+		if($scope.validaSenha != $scope.socio.senha){
 			$scope.resultadoSenha = 'As senhas digitadas não correspondem';
 		}
 		if($scope.validaSenha == $scope.senha){
@@ -70,12 +96,22 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 
 	};
 
-	$scope.cadastrarSocio = function(){
-	
+	$scope.cadastrarSocio = function(socio){
+		//Call the services
+
+		$http.post('/socio', socio).then(function (response) {
+			if (response.data)
+				alert('Deu boa' + response.status);
+				console.log('Deu boa' + response.status)
+			},
+			function (response) {
+				alert('Nao boa' + response.statusresponse.status);
+				console.log('Nao Deu boa' + response.status);
+			});	
 	};
 
 	$scope.validarSocio = function(){
-
+			$scope.cadastrarSocio($scope.socio);
 	};
 
 	
