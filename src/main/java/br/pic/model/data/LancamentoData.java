@@ -2,8 +2,7 @@ package br.pic.model.data;
 
 public class LancamentoData {
 	
-private Long id;
-	
+	private Long id;
 	private ContaPrincipalData contaPrincipal;
 	private AtivoData ativo;
 	private PropostaData proposta;

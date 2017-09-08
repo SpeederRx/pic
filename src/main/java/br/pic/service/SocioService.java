@@ -15,27 +15,34 @@ public class SocioService implements PicService<Socio>{
 	@Inject
 	private SocioDao socioDao;
 	
+	@Inject
+	private EnderecoService enderecoService;
+	
 	@Override
 	public void validar(Socio obj) throws PicException {
 		
 		if(obj == null) {
-			throw new IllegalArgumentException("Objeto não pode ser nulo.");
+			throw new PicException("Objeto nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getNome())){
-			throw new PicException("Nome deve ser preenchido corretamente.");
+			throw new PicException("Nome nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getCpf())){
-			throw new PicException("CPF deve ser preenchido corretamente.");
+			throw new PicException("CPF nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getEmail())) {
-			throw new PicException("E-mail deve ser preenchido corretamente.");
+			throw new PicException("E-mail nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getTelefone())){
-			throw new PicException("Telefone deve ser preenchido corretamente.");
+			throw new PicException("Telefone nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getContaMovimento())){
-			throw new PicException("Conta de Movimento deve ser preenchido corretamente.");
+			throw new PicException("Conta de Movimento nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getSenha())){
-			throw new PicException("Senha deve ser preenchido corretamente.");
-		} if(obj.getEndereco() == null){
-			throw new PicException("Endereco deve ser preenchido corretamente.");
-		}
-	
+			throw new PicException("Senha nao pode ser nula.");
+		} if(obj.getDataNasc() == null){
+			throw new PicException("Data de Nascimento nao pode ser nula.");
+		} if(obj.getClassificacao() == null){
+			throw new PicException("Classificacao nao pode ser nula.");
+		} if(obj.getTipoEnvio() == null){
+			throw new PicException("Tipo do Envio nao pode ser nulo.");
+		} 
+		enderecoService.validar(obj.getEndereco());
 	}
 	
 	@Override

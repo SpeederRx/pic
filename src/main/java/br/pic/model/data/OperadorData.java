@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class OperadorData {
 
-private Long id;
-	
+	private Long id;
 	private String nome;
 	private String cpf;
 	private Date dataNasc;
@@ -15,6 +14,7 @@ private Long id;
 	private Long nivelAcesso;
 	private String senha;
 	private String descricao;
+	
 	public Long getId() {
 		return id;
 	}

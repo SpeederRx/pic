@@ -19,21 +19,21 @@ public class EnderecoService implements PicService<Endereco> {
 	public void validar(Endereco obj) throws PicException {
 		
 		if(obj == null) {
-			throw new PicException("Objeto não pode ser nulo.");
+			throw new PicException("Objeto nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getRua())){
-			throw new PicException("Nome da Rua ser preenchido corretamente.");
+			throw new PicException("Nome da Rua nao pode ser nulo.");
 		} if(obj.getNumero()== null){
-			throw new PicException("Numero deve ser preenchido corretamente.");
+			throw new PicException("Numero nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getCidade())){
-			throw new PicException("Cidade deve ser preenchido corretamente.");
+			throw new PicException("Cidade nao pode ser nula.");
 		} if(StringUtils.isNullOrBlank(obj.getEstado())){
-			throw new PicException("Estado deve ser preenchido corretamente.");
+			throw new PicException("Estado nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getCep())){
-			throw new PicException("CEP deve ser preenchido corretamente.");
+			throw new PicException("CEP nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getPais())){
-			throw new PicException("Pais deve ser preenchido corretamente.");
+			throw new PicException("Pais nao pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getBairro())){
-			throw new PicException("Bairro deve ser preenchido corretamente.");
+			throw new PicException("Bairro nao pode ser nulo.");
 		}
 		
 	}
