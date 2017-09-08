@@ -11,7 +11,7 @@ public class EnderecoPopulate implements PicPopulate<Endereco, EnderecoData> {
 	public Endereco toModel(EnderecoData data) {
 		
 		if(data == null){
-			throw new IllegalArgumentException("Endereço não pode ser nulo.");
+			throw new IllegalArgumentException("Endereço nao pode ser nulo.");
 		}
 		
 		Endereco endereco = new Endereco();

@@ -17,7 +17,7 @@ public class SocioPopulate implements PicPopulate<Socio, SocioData> {
 	public Socio toModel(SocioData data) {
 		
 		if(data == null) {
-			throw new IllegalArgumentException("Socio não pode ser nulo.");
+			throw new IllegalArgumentException("Socio nao pode ser nulo.");
 		}
 		Socio socio = new Socio();
 		
