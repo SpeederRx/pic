@@ -19,7 +19,7 @@ public class StringUtils {
 	}
 	
 	public static boolean isNullOrBlank(String arg) {
-		return isNullOrEmpty(arg) && isBlank(arg);  
+		return isNullOrEmpty(arg) || isBlank(arg);  
 	}
 	
 }

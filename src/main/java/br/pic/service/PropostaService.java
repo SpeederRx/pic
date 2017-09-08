@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.context.annotation.Configuration;
+
 import br.pic.dao.PropostaDao;
 import br.pic.exception.PicException;
 import br.pic.model.Proposta;
@@ -12,6 +14,7 @@ import br.pic.model.data.LancamentoData;
 import br.pic.model.data.ParticipanteData;
 import br.pic.util.StringUtils;
 
+@Configuration
 public class PropostaService implements PicService<Proposta>{
 	
 	@Inject

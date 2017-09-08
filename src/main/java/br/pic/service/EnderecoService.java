@@ -2,11 +2,14 @@ package br.pic.service;
 
 import javax.inject.Inject;
 
+import org.springframework.context.annotation.Configuration;
+
 import br.pic.dao.EnderecoDao;
 import br.pic.exception.PicException;
 import br.pic.model.Endereco;
 import br.pic.util.StringUtils;
 
+@Configuration
 public class EnderecoService implements PicService<Endereco> {
 
 	@Inject
@@ -16,7 +19,7 @@ public class EnderecoService implements PicService<Endereco> {
 	public void validar(Endereco obj) throws PicException {
 		
 		if(obj == null) {
-			throw new IllegalArgumentException("Objeto não pode ser nulo.");
+			throw new PicException("Objeto não pode ser nulo.");
 		} if(StringUtils.isNullOrBlank(obj.getRua())){
 			throw new PicException("Nome da Rua ser preenchido corretamente.");
 		} if(obj.getNumero()== null){
@@ -29,6 +32,8 @@ public class EnderecoService implements PicService<Endereco> {
 			throw new PicException("CEP deve ser preenchido corretamente.");
 		} if(StringUtils.isNullOrBlank(obj.getPais())){
 			throw new PicException("Pais deve ser preenchido corretamente.");
+		} if(StringUtils.isNullOrBlank(obj.getBairro())){
+			throw new PicException("Bairro deve ser preenchido corretamente.");
 		}
 		
 	}

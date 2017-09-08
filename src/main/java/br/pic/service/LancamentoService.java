@@ -1,8 +1,11 @@
 package br.pic.service;
 
+import org.springframework.context.annotation.Configuration;
+
 import br.pic.exception.PicException;
 import br.pic.model.Lancamento;
 
+@Configuration
 public class LancamentoService implements PicService<Lancamento>{
 
 	@Override

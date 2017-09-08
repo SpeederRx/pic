@@ -36,15 +36,18 @@ dependencies {
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.43'
 	
 	compile group: 'org.springframework', name: 'spring-orm', version: '4.3.10.RELEASE'
+	
+	// JUnit and Mockito
+    testCompile "junit:junit:4.11"
+    testCompile group: 'org.springframework', name: 'spring-test', version: '2.5'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.6.RELEASE'
+    
 }
 
 sourceSets {
 	main {
 		java {
 			srcDir 'src/main/java'
-		}
-		resources{
-			scrDir 'src/main/resources'
 		}
 	}
 	test{
