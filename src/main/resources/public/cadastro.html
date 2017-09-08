@@ -118,23 +118,23 @@
 					<div class="form-inline">
 						<h1 class="form-group col-sm-12">{{ cpfAlert }}</h1>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control" name="cpf" id="InputCPF" placeholder="CPF" ng-model="cpf">
+							<input type="text" class="form-control" name="cpf" id="InputCPF" placeholder="CPF" ng-model="socio.cpf">
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="date" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" >
+							<input type="date" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" ng-model="socio.dataNasc">
 						</div>
 						<div class="form-group col-sm-12" id='submitCPF'>
 							<input type="button" id='submitCPF' class="btn  btn-lg costom-btn" value="Validar CPF" ng-click="validaCpf()"/>
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="text" class="form-control" name="nome" id="InputNome"  placeholder="nome" >
+							<input type="text" class="form-control" name="nome" id="InputNome"  placeholder="nome" ng-model="socio.nome">
 						</div>
 						<div class="form-group col-sm-6">
-						    <span ng-show="cadForm.email.$error.email">Not a valid e-mail address</span>
-							<input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="text">
+						    <span ng-show="cadForm.email.$error.email">Endereço de email inválido</span>
+							<input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="socio.email">
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="password" class="form-control" name="senha" ng-model="senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()" required="">
+							<input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()" required="">
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="password" class="form-control" name="validaSenha" id="InputValidaSenha" ng-blur="compararSenha()" placeholder="Repita a Senha" ng-model="validaSenha" ng-model-options="{ getterSetter: true }">
@@ -149,24 +149,24 @@
 						<div class="form-group col-sm-9">
 							<label class="footer-heading">Contato</label>
 							<label></label>
-							<input type="text" class="form-control" name="rua" id="InputRua" placeholder="Rua">
+							<input type="text" class="form-control" name="rua" id="InputRua" placeholder="Rua" ng-model="socio.enderecoData.rua">
 						</div>
 						<div class="form-group col-sm-3">
 							<label></label>
-							<input type="text" class="form-control" name="numero" id="InputNumero" placeholder="Número">
+							<input type="text" class="form-control" name="numero" id="InputNumero" placeholder="Número" ng-model="socio.enderecoData.numero">
 
 						</div>
 						<div class="form-group col-sm-4">
-							<input type="text" class="form-control" name="complemento" id="InputComplemento" placeholder="Complemento">
+							<input type="text" class="form-control" name="complemento" id="InputComplemento" placeholder="Complemento" ng-model="socio.enderecoData.complemento">
 						</div>
 						<div class="form-group col-sm-4">							
-							<input type="text" class="form-control" name="bairro" id="InputBairro" placeholder="Bairro">
+							<input type="text" class="form-control" name="bairro" id="InputBairro" placeholder="Bairro" ng-model="socio.enderecoData.bairro">
 						</div>
 						<div class="form-group col-sm-4">	
-							<input type="text" class="form-control" name="cidade" id="InputCidade" placeholder="Cidade">
+							<input type="text" class="form-control" name="cidade" id="InputCidade" placeholder="Cidade" ng-model="socio.enderecoData.cidade">
 						</div>
 						<div class="form-group col-sm-4">	
-							<select class="form-control" name="estado" id="InputEstado">
+							<select class="form-control" name="estado" id="InputEstado" ng-model="socio.enderecoData.estado">
 						  		<option value="">Selecione o estado</option>
 						  		<option value="AC">AC</option>
 								<option value="AL">AL</option>
@@ -199,27 +199,27 @@
 						</div>
 						<div class="form-group col-sm-4">
 								
-							<input type="text" class="form-control" name="cep" id="InputCep" placeholder="CEP">
+							<input type="text" class="form-control" name="cep" id="InputCep" placeholder="CEP" ng-model="socio.enderecoData.cep">
 						</div>
 						<div class="form-group col-sm-4">	
-							<input type="text" class="form-control" name="pais" id="InputPais" placeholder="País">
+							<input type="text" class="form-control" name="pais" id="InputPais" placeholder="País" ng-model="socio.enderecoData.pais">
 						</div>
 						<div class="form-group col-sm-12">	
-							<input type="text" class="form-control" name="telefone" id="InputTelefone" placeholder="Telefone (11)XXXXXXXX">
+							<input type="text" class="form-control" name="telefone" id="InputTelefone" placeholder="Telefone (11)XXXXXXXX" ng-model="socio.telefone">
 						</div>
 					</div>
 
 					<div class="form-inline" title="Carteira Digital">
 						<div class="form-group col-sm-6">
 							<label class="footer-heading">Carteira Digital</label>
-							<select class="form-control" name="comboCarteira" id="comboCarteira" required>
-						  		<option value="PagSeguro">PagSeguro</option>
-						  		<option value="PayPal">PayPal</option>				  
+							<select class="form-control" name="comboCarteira" id="comboCarteira" ng-model="operadoraCarteiraDigital">
+						  		<option value="1">PagSeguro</option>
+						  		<option value="1">PayPal</option>				  
 							</select>
 						</div>
 						<div class="form-group col-sm-6">
 							<label></label>
-							<input type="text" class="form-control" name="numCarteiraDig" id="InputNumCarteiraDig" ng-model="carteiraDigital" placeholder="Número da Carteira Digital">
+							<input type="text" class="form-control" name="numCarteiraDig" id="InputNumCarteiraDig" ng-model="socio.contaMovimento" placeholder="Número da Carteira Digital">
 						</div>
 						<div class="form-group col-sm-12" id='submitCPF'>
 							<input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Validar Carteira" ng-click="validarCarteira()"/>
@@ -228,30 +228,18 @@
 					<div class="form-inline" title="Segurança">
 						<div class="form-group col-sm-12">
 							<label class="footer-heading">Ferramentas de Validação e Segurança</label>
-							<select class="form-control" name="comboTipoEnvio" id="comboTipoEnvio">
-						  		<option value="sms">SMS</option>
-						  		<option value="email">EMAIL</option>			  
+							<select class="form-control" name="comboTipoEnvio" id="comboTipoEnvio" ng-model="socio.tipoEnvio">
+						  		<option value="2">SMS</option>
+						  		<option value="1">EMAIL</option>			  
 							</select>
-						</div>
-						<div class="form-group col-sm-6">
-							<label></label>
-							<input type="text" class="form-control" name="envioPor" id="InputEnvioPor" placeholder="Insira o Endereço para envio do cód.">
 						</div>
 						<div class="form-group col-sm-6" id='submitCod'>
 							<label></label>
-							<input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Solicitar código de segurança" onclick=""/>
+							<input type="button" id='solicitarCodigo' class="btn  btn-lg costom-btn" value="Solicitar código de segurança" ng-click=""/>
 						</div>
 						<div class="form-group col-sm-12">							
-							<input type="text" class="form-control" name="token" id="InputToken" placeholder="Insira o código recebido.">
+							<input type="text" class="form-control" name="token" id="InputToken" placeholder="Insira o código recebido." ng-model="token">
 						</div>
-					</div>
-					<div class="form-group col-xs-12">
-						<div id='mail_success' class='success' style="display:none;">Your message has been sent successfully.
-						
-						</div><!-- success message -->
-						<div id='mail_fail' class='error' style="display:none;"> Sorry, error occured this time sending your message.
-						
-						</div><!-- error message -->
 					</div>
 					<div class="form-group col-sm-12" id='submit'>
 						<div class="form-group col-sm-12">
@@ -268,7 +256,7 @@
 								Você pode encontrar mais informações sobre como o Google usa e armazena conteúdo na política de privacidade ou termos adicionais de Serviços específicos. Se você enviar comentários ou sugestões sobre nossos Serviços, podemos usar seus comentários ou sugestões sem obrigação para você.
 							</p>
 						</div>
-						<input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Confirmar cadastro" ng-click="cadastrarSocio()">
+						<input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Confirmar cadastro" ng-click="validarSocio()">
 					</div>
 				</form>
 			</div> <!-- /.col-xs-12 .col-sm-offset-2 .col-sm-8 -->
