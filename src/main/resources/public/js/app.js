@@ -1,10 +1,26 @@
-var appCadastro = angular.module ('appCadastro',[]);
+var appCadastro = angular.module ('appIndex',[]);
 
-appCadastro.controller('MainController', ['$scope', '$http', function($scope, $http) {
+appCadastro.controller('CadastroController', ['$scope', '$http', function($scope, $http) {
 	$scope.cpfAlert = 'vazio';
+	$scope.showCadastro = false;
+	$scope.showLogin = false;
 
+	$scope.toggleCadatroState = function(){
+			$scope.showCadastro = true;
+			$scope.showLogin = false;
+	};
+
+	$scope.toggleLoginState = function(){
+			$scope.showCadastro = false;
+			$scope.showLogin = true;
+	};
+
+	$scope.setOffCadastroLogin = function(){
+		$scope.showCadastro = false;
+		$scope.showLogin = false;
+	};
 	/*/////////////Inicio variáveis para teste///////////////////////*/
-	
+
 	$scope.socio = {
 			cpf: '05728048900',
 			dataNasc: '',
@@ -28,8 +44,8 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 
 
 	/*/////////////Fim variáveis para teste///////////////////////*/
-	$scope.validaCpf = function() { 
-		
+	$scope.validaCpf = function() {
+
 		try {
 			var cpfOriginal = $scope.socio.cpf;
 		}
@@ -37,14 +53,14 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 			$scope.cpfAlert = 'Campo Vazio';
 			return false;
 		}
-		var cpf = cpfOriginal.replace(/[^\d]+/g,'');    
+		var cpf = cpfOriginal.replace(/[^\d]+/g,'');
 		var numeros, digitos, soma, i, resultado, digitos_iguais;
 		    digitos_iguais = 1;
 		    if (cpf.length != 11){
 		    	$scope.cpfAlert = 'Favor inserir os 11 dígitos do CPF';
 		          return false;
 		    }
-		    
+
 		    for (i = 0; i < cpf.length - 1; i++)
 		          if (cpf.charAt(i) != cpf.charAt(i + 1))
 		                {
@@ -60,7 +76,7 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 		                soma += numeros.charAt(10 - i) * i;
 		          resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 		          if (resultado != digitos.charAt(0)){
-		          		$scope.cpfAlert = 'Favor inserir CPF válido - primeiro dígito inválido';
+		          		$scope.cpfAlert = 'CPF Inválido. Por favor, verifique.';
 		                return false;
 		          }
 		          numeros = cpf.substring(0,10);
@@ -69,18 +85,18 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 		                soma += numeros.charAt(11 - i) * i;
 		          resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 		          if (resultado != digitos.charAt(1)){
-		          		$scope.cpfAlert = 'Favor inserir CPF válido - segundo dígito inválido';
+		          		$scope.cpfAlert = 'CPF Inválido. Por favor, verifique.';
 		                return false;
 		          }
-		          $scope.cpfAlert = 'Deu boa parça';
+		          $scope.cpfAlert = '';
 		          return true;
 		          }
 		    else{
-		    	$scope.cpfAlert = 'Favor inserir CPF válido - final do código';
+		    	$scope.cpfAlert = 'CPF Inválido. Por favor, verifique.';
 		    	return false;
 		    }
-		        
-				
+
+
 	};
 
 	$scope.compararSenha = function(){
@@ -91,7 +107,7 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 			$scope.resultadoSenha = '';
 		}
 	};
-	
+
 	$scope.validarCarteira = function(){
 
 	};
@@ -107,13 +123,24 @@ appCadastro.controller('MainController', ['$scope', '$http', function($scope, $h
 			function (response) {
 				alert('Nao boa' + response.statusresponse.status);
 				console.log('Nao Deu boa' + response.status);
-			});	
+			});
 	};
 
 	$scope.validarSocio = function(){
 			$scope.cadastrarSocio($scope.socio);
 	};
 
-	
-	
+	$scope.efetuatLogin= function(){
+		$http.post('/login', socio).then(function (response) {
+			if (response.data)
+				alert('Deu boa' + response.status);
+				console.log('Deu boa' + response.status)
+			},
+			function (response) {
+				alert('Nao boa' + response.statusresponse.status);
+				console.log('Nao Deu boa' + response.status);
+			});
+	};
+
+
 }]);
