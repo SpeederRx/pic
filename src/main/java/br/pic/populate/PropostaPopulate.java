@@ -1,8 +1,11 @@
 package br.pic.populate;
 
+import org.springframework.context.annotation.Configuration;
+
 import br.pic.model.Proposta;
 import br.pic.model.data.PropostaData;
 
+@Configuration
 public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 
 	@Override
@@ -14,6 +17,7 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		
 		Proposta proposta = new Proposta();
 		
+		proposta.setNome(data.getNome());
 		proposta.setTipoProposta(data.getTipoProposta());
 		proposta.setDataInicio(data.getDataInicio());
 		proposta.setDataFim(data.getDataFim());

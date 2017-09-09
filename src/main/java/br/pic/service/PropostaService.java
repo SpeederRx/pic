@@ -20,8 +20,9 @@ public class PropostaService implements PicService<Proposta>{
 		
 		if(obj == null) {
 			throw new IllegalArgumentException("Objeto nao pode ser nulo.");
-		} 
-		if(obj.getTipoProposta() == null){
+		} if(StringUtils.isNullOrBlank(obj.getNome())){
+			throw new PicException("Nome nao pode ser nulo.");
+		}if(obj.getTipoProposta() == null){
 			throw new PicException("Tipo de Proposta nao pode ser nulo.");
 		} if(obj.getDataInicio() == null){
 			throw new PicException("Data de Inicio nao pode ser nula.");

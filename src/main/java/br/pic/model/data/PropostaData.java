@@ -6,6 +6,7 @@ import java.util.List;
 public class PropostaData {
 	
 	private Long id;
+	private String nome;
 	private Integer tipoProposta;
 	private Date dataInicio;
 	private Date dataFim;
@@ -22,6 +23,12 @@ public class PropostaData {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public Integer getTipoProposta() {
 		return tipoProposta;
@@ -83,5 +90,6 @@ public class PropostaData {
 	public void setPercentLucro(Double percentLucro) {
 		this.percentLucro = percentLucro;
 	}
-
+	
+	
 }

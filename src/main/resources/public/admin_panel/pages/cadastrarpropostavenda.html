@@ -388,7 +388,7 @@
                                 <div class="col-lg-12">
                                         <div class="form-group">
                                             <label>Nome da Proposta</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" ng-model="proposta.nome">
                                         </div>
                                 </div>
                                                             
@@ -397,7 +397,7 @@
                                 <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Data de Início</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control" ng-model="proposta.dataInicio">
                                         </div>
                                 </div>                                
                                 <div class="col-lg-3">
@@ -409,7 +409,7 @@
                                 <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Data de Fim</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control" ng-model="proposta.dataFim">
                                         </div>
                                 </div>                                
                                 <div class="col-lg-3">
@@ -423,19 +423,19 @@
                                 <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Mínimo de Cotas(Un)</label>
-                                            <input type="number" class="form-control" min="0" step="0.0001">
+                                            <input type="number" class="form-control" min="0" step="0.0001" ng-model="proposta.minCotas">
                                         </div>
                                 </div>                                
                                 <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Máximo de Cotas(Un)</label>
-                                            <input type="number" class="form-control" min="0" step="0.0001">
+                                            <input type="number" class="form-control" min="0" step="0.0001" ng-model="proposta.maxCotas">
                                         </div>
                                 </div>   
                                 <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>Taxa de Participação(%)</label>
-                                            <input type="number" class="form-control" min="0" max="100" step="0.0001">
+                                            <input type="number" class="form-control" min="0" max="100" step="0.0001" ng-model="proposta.percentLucro">
                                         </div>
                                 </div>
                                 <div class="col-lg-3">
@@ -466,7 +466,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Descrição</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" rows="3" ng-model="proposta.descricao"></textarea>
                                 </div>
                             </div>
                             <br/>
