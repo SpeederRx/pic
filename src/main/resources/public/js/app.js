@@ -1,7 +1,7 @@
 var appCadastro = angular.module ('appIndex',[]);
 
 appCadastro.controller('CadastroController', ['$scope', '$http', function($scope, $http) {
-	$scope.cpfAlert = 'vazio';
+	
 	$scope.showCadastro = false;
 	$scope.showLogin = false;
 
@@ -21,7 +21,7 @@ appCadastro.controller('CadastroController', ['$scope', '$http', function($scope
 	};
 	/*/////////////Inicio variáveis para teste///////////////////////*/
 
-	$scope.socio = {
+	/*$scope.socio = {
 			cpf: '05728048900',
 			dataNasc: '',
 			nome: 'John Smith',
@@ -40,7 +40,7 @@ appCadastro.controller('CadastroController', ['$scope', '$http', function($scope
 			contaMovimento: '9878',
 			tipoEnvio: 2,
 			classificacao: 1.0
-	}
+	}*/
 
 
 	/*/////////////Fim variáveis para teste///////////////////////*/
