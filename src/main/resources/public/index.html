@@ -51,7 +51,7 @@
 </script>
 <![endif]-->
 </head>
-<body ng-app="appIndex" ng-controller="CadastroController">
+<body ng-app="appIndex" ng-controller="indexController">
   <div class="loader"></div>
   <div class="main" id="home">
     <!-- slider -->
@@ -412,42 +412,6 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
         <h1 class="section-title">Quem somos</h1>
         <p>Somos uma equipe de desenvolvedores web que visam inserir o público no mercado de ações, por meio do ganho de conhecimento com o compartilhamento de experiência e conhecimento do mercado financeiro. Buscamos criar um novo paradigma do negócio, englobando os benefícios dos fundos de investimento e a praticidade dos investimentos individuais em um mesmo ambiente de trabalho.</p>
       </div><!-- col-xs-12 -->
-      <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3 text-center">
-        <div class="icon-circle">
-          <i class="fa flaticon-android2"></i>
-        </div><!-- /.icon-circle -->
-        <div class="who-we-are-content text-center">
-          <h2>Teste de Título</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan venenatis lectus sed sollicitudin. </p>
-        </div><!-- /.who-we-are-content -->
-      </div><!-- /.col-xs-6 -->
-      <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3 text-center">
-        <div class="icon-circle">
-          <i class="fa fa-laptop"></i>
-        </div><!-- /.icon-circle -->
-        <div class="who-we-are-content text-center">
-          <h2>perfect for all</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan venenatis lectus sed sollicitudin. </p>
-        </div><!-- /.who-we-are-content -->
-      </div><!-- /.col-xs-6 -->
-      <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3 text-center">
-        <div class="icon-circle">
-          <i class="fa flaticon-christmas128"></i>
-        </div><!-- /.icon-circle -->
-        <div class="who-we-are-content text-center">
-          <h2>easy to customize</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan venenatis lectus sed sollicitudin. </p>
-        </div><!-- /.who-we-are-content -->
-      </div><!-- /.col-xs-6 -->
-      <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3 text-center">
-        <div class="icon-circle">
-          <i class="fa fa-code"></i>
-        </div><!-- /.icon-circle -->
-        <div class="who-we-are-content text-center">
-          <h2>beautifully crafted</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan venenatis lectus sed sollicitudin. </p>
-        </div><!-- /.who-we-are-content -->
-      </div><!-- /.col-xs-6 -->
     </div><!--/row-->
   </div><!-- /container -->
 </section><!-- /who we wre -->
@@ -534,7 +498,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                 <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="socio.email">
               </div>
               <div class="form-group col-sm-6">
-                <input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()" required="">
+                <input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()">
               </div>
               <div class="form-group col-sm-6">
                 <input type="password" class="form-control" name="validaSenha" id="InputValidaSenha" ng-blur="compararSenha()" placeholder="Repita a Senha" ng-model="validaSenha" ng-model-options="{ getterSetter: true }">
@@ -657,7 +621,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                   Você pode encontrar mais informações sobre como o Google usa e armazena conteúdo na política de privacidade ou termos adicionais de Serviços específicos. Se você enviar comentários ou sugestões sobre nossos Serviços, podemos usar seus comentários ou sugestões sem obrigação para você.
                 </p>
               </div>
-              <input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Confirmar cadastro" ng-click="validarSocio()">
+              <input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Aceitar os temos e Confirmar cadastro" ng-click="validarSocio()">
             </div>
           </form>
         </div> <!-- /.col-xs-12 .col-sm-offset-2 .col-sm-8 -->
@@ -682,7 +646,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                 <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="socio.email">
               </div>
               <div class="form-group col-sm-6">
-                <input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()" required="">
+                <input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()">
               </div>
               <div class="form-group col-sm-12">
                 <input type="button" id='send_message' class="btn  btn-lg costom-btn" value="Entrar" ng-click="efetuarLogin()">

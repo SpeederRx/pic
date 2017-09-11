@@ -1,6 +1,6 @@
-var appCadastro = angular.module ('appIndex',[]);
+var appIndex = angular.module ('appIndex',[]);
 
-appCadastro.controller('CadastroController', ['$scope', '$http', function($scope, $http) {
+appIndex.controller('indexController', ['$scope', '$http', function($scope, $http) {
 	
 	$scope.showCadastro = false;
 	$scope.showLogin = false;
@@ -108,12 +108,7 @@ appCadastro.controller('CadastroController', ['$scope', '$http', function($scope
 		}
 	};
 
-	$scope.validarCarteira = function(){
-
-	};
-
 	$scope.cadastrarSocio = function(socio){
-		//Call the services
 
 		$http.post('/socio', socio).then(function (response) {
 			if (response.data)
@@ -127,19 +122,56 @@ appCadastro.controller('CadastroController', ['$scope', '$http', function($scope
 	};
 
 	$scope.validarSocio = function(){
-			$scope.cadastrarSocio($scope.socio);
+			if($scope.socio == null){
+				alert("Por favor preencha o formulário");
+				return;
+			}
+			if($scope.validaCpf() == false){
+				alert("Por favor preencher o CPF");
+				return;
+			}
+			if($scope.socio.dataNasc == null){
+				alert("Por favor preencher data de nascimento");
+				return;
+			}
+			if($scope.socio.nome == null || $scope.socio.nome.trim() == ""){
+				alert("Por favor preencher o nome");
+				return;
+			}
+			if($scope.socio.email == null || $scope.socio.email.trim() == ""){
+				alert("Por favor preencher o email");
+				return;
+			}
+			if($scope.socio.senha == null || $scope.socio.senha.trim() == ""){
+				alert("Por favor preencher a senha");
+				return;
+			}
+			if($scope.socio.endereco == null){
+				alert("Por favor preencher o endereço completo");
+				return;
+			}	
+			if($scope.socio.telefone == null || $scope.socio.telefone.trim() == ""){
+				alert("Por favor preencher o telefone");
+				return;
+			}
+			if($scope.socio.contaMovimento == null || $scope.socio.contaMovimento.trim() == ""){
+				alert("Por favor preencher o número da carteira digital");
+				return;
+			}
+			if($scope.socio.tipoEnvio == null){
+				alert("Por favor selecionar um meio de envio do cód de segurança");
+				return;
+			}
+
+		$scope.cadastrarSocio($scope.socio);
 	};
 
-	$scope.efetuatLogin= function(){
-		$http.post('/login', socio).then(function (response) {
-			if (response.data)
-				alert('Deu boa' + response.status);
-				console.log('Deu boa' + response.status)
-			},
-			function (response) {
-				alert('Nao boa' + response.statusresponse.status);
-				console.log('Nao Deu boa' + response.status);
-			});
+	$scope.efetuarLogin= function(){
+		$(window.document.location).attr('href',"pages/index.html");
+	};
+
+	$scope.validarCarteira = function(){
+
 	};
 
 
