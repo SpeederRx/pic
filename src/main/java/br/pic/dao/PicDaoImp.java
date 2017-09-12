@@ -1,4 +1,6 @@
 package br.pic.dao;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -52,6 +54,36 @@ public class PicDaoImp<T> implements PicDao<T> {
 		String sql = "Select o from " + klass.getSimpleName() + " o ";
 		Query query = entityManager.createQuery(sql);
 		return (List<T>) query.getResultList();
+	}
+	
+	@Override
+	public List<T> pesquisarPorAtributo(T t) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException{
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append(" Select o from " + klass.getSimpleName() + " o where 1=1 ");
+		for(int i = 0; i < t.getClass().getMethods().length; i++) {
+			Method method = t.getClass().getMethods()[i];
+			if(t.getClass().getMethods()[i].getName().startsWith("get") && !t.getClass().getMethods()[i].getName().contains("Class")){
+				if(method.invoke(t, new Object[] {}) != null) {
+					String fieldName = method.getName().substring(3, method.getName().length());
+					sql.append(" and o." + fieldName.toLowerCase() + " = :" + fieldName);
+				}
+			}
+		}
+		Query query = entityManager.createQuery(sql.toString());
+		
+		for(int i = 0; i < t.getClass().getMethods().length; i++) {
+			Method method = t.getClass().getMethods()[i];
+			if(t.getClass().getMethods()[i].getName().startsWith("get") && !t.getClass().getMethods()[i].getName().contains("Class")){
+				if(method.invoke(t, new Object[] {}) != null) {
+					String fieldName = method.getName().substring(3, method.getName().length());
+					query.setParameter(fieldName, method.invoke(t, new Object[] {}));
+				}
+			}
+		}
+		
+		return query.getResultList();
+		
 	}
 
 	public EntityManager getEntityManager() {

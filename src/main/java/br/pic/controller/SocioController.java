@@ -30,7 +30,6 @@ public class SocioController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<HttpStatus> save(@RequestBody SocioData socioData) {
-		
 		try {
 			socioService.salvar(socioPopulate.toModel(socioData));	
 		} catch (PicException e) {
@@ -39,7 +38,6 @@ public class SocioController {
             ResponseEntity<HttpStatus> response = new ResponseEntity<HttpStatus>(headers, HttpStatus.BAD_REQUEST);
             return response;
 		}
-		
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	

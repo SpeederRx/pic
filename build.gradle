@@ -41,6 +41,10 @@ dependencies {
     testCompile "junit:junit:4.11"
     testCompile group: 'org.springframework', name: 'spring-test', version: '2.5'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.6.RELEASE'
+  
+	// https://mvnrepository.com/artifact/org.springframework/spring-context-support
+	compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.0.RELEASE'
+
     
 }
 

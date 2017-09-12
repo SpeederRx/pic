@@ -35,4 +35,29 @@ public class SocioPopulate implements PicPopulate<Socio, SocioData> {
 		
 		return socio;
 	}
+	
+	@Override
+	public SocioData toData(Socio model) {
+		
+		
+		if(model == null) {
+			throw new IllegalArgumentException("Socio nao pode ser nulo.");
+		}
+		SocioData socioData = new SocioData();
+		
+		socioData.setId(model.getId());
+		socioData.setClassificacao(model.getClassificacao());
+		socioData.setContaMovimento(model.getContaMovimento());
+		socioData.setCpf(model.getCpf());
+		socioData.setDataNasc(model.getDataNasc());
+		socioData.setEmail(model.getEmail());
+		socioData.setNome(model.getNome());
+		socioData.setSenha(model.getSenha());
+		socioData.setTelefone(model.getTelefone());
+		socioData.setTipoEnvio(model.getTipoEnvio());
+		socioData.setEnderecoData(enderecoPopulate.toData(model.getEndereco()));
+		
+		return socioData;
+	}
+	
 }

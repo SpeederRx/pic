@@ -30,4 +30,10 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		return proposta;
 	}
 
+	@Override
+	public PropostaData toData(Proposta Model) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

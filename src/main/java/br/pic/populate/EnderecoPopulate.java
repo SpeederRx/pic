@@ -29,4 +29,27 @@ public class EnderecoPopulate implements PicPopulate<Endereco, EnderecoData> {
 		return endereco;
 	}
 	
+	@Override
+	public EnderecoData toData(Endereco model) {
+		
+		if(model == null){
+			throw new IllegalArgumentException("Endereço nao pode ser nulo.");
+		}
+		
+		EnderecoData enderecoData = new EnderecoData();
+		
+		enderecoData.setBairro(model.getBairro());
+		enderecoData.setCep(model.getCep());
+		enderecoData.setCidade(model.getCidade());
+		enderecoData.setComplemento(model.getComplemento());
+		enderecoData.setEstado(model.getEstado());
+		enderecoData.setId(model.getId());
+		enderecoData.setNumero(model.getNumero());
+		enderecoData.setPais(model.getPais());
+		enderecoData.setRua(model.getRua());
+		
+		return enderecoData;
+		
+	}
+	
 }
