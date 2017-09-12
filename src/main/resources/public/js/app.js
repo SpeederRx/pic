@@ -21,7 +21,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	};
 	/*/////////////Inicio variáveis para teste///////////////////////*/
 
-	/*$scope.socio = {
+	$scope.socio = {
 			cpf: '05728048900',
 			dataNasc: '',
 			nome: 'John Smith',
@@ -40,7 +40,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 			contaMovimento: '9878',
 			tipoEnvio: 2,
 			classificacao: 1.0
-	}*/
+	}
 
 
 	/*/////////////Fim variáveis para teste///////////////////////*/
@@ -100,23 +100,31 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	};
 
 	$scope.compararSenha = function(){
-		if($scope.validaSenha != $scope.socio.senha){
+		if($scope.validaSenha == null || $scope.validaSenha != $scope.socio.senha){
 			$scope.resultadoSenha = 'As senhas digitadas não correspondem';
+			return;
 		}
-		if($scope.validaSenha == $scope.senha){
+		else if($scope.validaSenha == $scope.socio.senha){
 			$scope.resultadoSenha = '';
+			return;
+		}
+		else{
+			$scope.resultadoSenha = 'As senhas digitadas não correspondem';
+			return;
 		}
 	};
 
 	$scope.cadastrarSocio = function(socio){
 
 		$http.post('/socio', socio).then(function (response) {
-			if (response.data)
-				alert('Deu boa' + response.status);
-				console.log('Deu boa' + response.status)
+				if (response.status == 200){
+					alert("Cadastro efetuado com sucesso. Efetue login para acessar seu painel de controle.");
+					$scope.toggleLoginState();
+					$(window.document.location).attr('href',"#login");
+				}
 			},
 			function (response) {
-				alert('Nao boa' + response.statusresponse.status);
+				alert('Ocorreu um erro= ' + response.status);
 				console.log('Nao Deu boa' + response.status);
 			});
 	};
@@ -130,7 +138,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 				alert("Por favor preencher o CPF");
 				return;
 			}
-			if($scope.socio.dataNasc == null){
+			if($scope.socio.dataNasc == null || $scope.socio.dataNasc == ""){
 				alert("Por favor preencher data de nascimento");
 				return;
 			}
@@ -146,7 +154,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 				alert("Por favor preencher a senha");
 				return;
 			}
-			if($scope.socio.endereco == null){
+			if($scope.socio.enderecoData == null){
 				alert("Por favor preencher o endereço completo");
 				return;
 			}	
@@ -163,7 +171,12 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 				return;
 			}
 
-		$scope.cadastrarSocio($scope.socio);
+			try{$scope.cadastrarSocio($scope.socio);}
+			catch(err){
+				console.log(err);
+			}
+			
+		
 	};
 
 	$scope.efetuarLogin= function(){
