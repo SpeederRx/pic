@@ -37,7 +37,7 @@ public class PropostaService implements PicService<Proposta>{
 		} if(StringUtils.isNullOrBlank(obj.getDescricao())){
 			throw new PicException("Descricao nao pode ser nula.");
 		} if(obj.getPercentLucro() == null){
-		throw new PicException("Percentual de Lucro nao pode ser nulo.");
+			throw new PicException("Percentual de Lucro nao pode ser nulo.");
 		}
 		
 	}

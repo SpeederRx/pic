@@ -51,7 +51,7 @@
 </script>
 <![endif]-->
 </head>
-<body ng-app="appIndex" ng-controller="indexController">
+<body ng-app="appIndex" ng-controller="indexController" >
   <div class="loader"></div>
   <div class="main" id="home">
     <!-- slider -->
@@ -423,7 +423,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
 </section><!-- /who we wre -->
 
 <!-- OUR TEAM -->
-<section id="team" class="our-team section-padding">
+<section id="team" class="our-team section-padding" >
   <div class="container">
     <div class="row">
       <div class="wow zoomIn col-xs-12 text-center p-padding">
@@ -510,7 +510,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                 <input type="password" class="form-control" name="validaSenha" id="InputValidaSenha" data-ng-blur="compararSenha()" placeholder="Repita a Senha" ng-model="validaSenha" ng-model-options="{ getterSetter: true }">
                 <span>{{resultadoSenha}}</span>
               </div>
-              <div class="form-group col-sm-12">
+			  <div class="form-group col-sm-12">
                 <table id="mostra"></table>
               </div>
             </div>
@@ -592,7 +592,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                 <input type="text" class="form-control" name="numCarteiraDig" id="InputNumCarteiraDig" ng-model="socio.contaMovimento" placeholder="Número da Carteira Digital">
               </div>
               <div class="form-group col-sm-12" id='submitCPF'>
-                <input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Validar Carteira" ng-click=""/>
+                <input type="button" id='submitCarteira' class="btn  btn-lg costom-btn" value="Validar Carteira" ng-click="" disable/>
               </div>
             </div>
             <div class="form-inline" title="Segurança">
@@ -605,11 +605,11 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
               </div>
               <div class="form-group col-sm-6" id='submitCod'>
                 <label></label>
-                <input type="button" id='solicitarCodigo' class="btn  btn-lg costom-btn" value="Solicitar código de segurança" ng-click=""/>
+                <input type="button" id='solicitarCodigo' class="btn  btn-lg costom-btn" value="Solicitar código de segurança" ng-click="" disable/>
               </div>
               <div class="form-group col-sm-6">
                 <label></label>
-                <input type="text" class="form-control" name="token" id="InputToken" placeholder="Insira o código recebido." ng-model="token">
+                <input type="text" class="form-control" name="token" id="InputToken" placeholder="Insira o código recebido." ng-model="token" readonly="true">
               </div>
             </div>
             <div class="form-group col-sm-12" id='submit'>

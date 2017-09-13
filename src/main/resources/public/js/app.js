@@ -20,6 +20,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 		$scope.showCadastro = false;
 		$scope.showLogin = false;
 	};
+	
 	/*/////////////Inicio variáveis para teste///////////////////////
 
 	$scope.socio = {
@@ -131,6 +132,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	};
 
 	$scope.validarSocio = function(){
+			$scope.socio.classificacao = 1.0;
 			if($scope.socio == null){
 				alert("Por favor preencha o formulário");
 				return;

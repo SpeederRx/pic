@@ -39,10 +39,10 @@ public class SocioService implements PicService<Socio>{
 			throw new PicException("Senha nao pode ser nula.");
 		} if(obj.getDataNasc() == null){
 			throw new PicException("Data de Nascimento nao pode ser nula.");
-		} if(obj.getClassificacao() == null){
-			throw new PicException("Classificacao nao pode ser nula.");
 		} if(obj.getTipoEnvio() == null){
 			throw new PicException("Tipo do Envio nao pode ser nulo.");
+		} if(obj.getClassificacao() == null){
+			throw new PicException("Classificacao nao pode ser nula.");
 		} 
 		enderecoService.validar(obj.getEndereco());
 	}

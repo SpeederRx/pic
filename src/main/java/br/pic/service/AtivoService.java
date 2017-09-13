@@ -26,6 +26,8 @@ public class AtivoService implements PicService<Ativo>{
 			throw new PicException("Tipo do Ativo nao pode ser nulo.");
 		} 
 		
+		
+		
 	}
 
 	@Override
