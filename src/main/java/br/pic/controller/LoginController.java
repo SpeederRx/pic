@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,11 +32,11 @@ public class LoginController {
 	private SocioPopulate SocioPopulate;
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<SocioData> login(@RequestParam String email, @RequestParam String senha){
+	public ResponseEntity<SocioData> login(@RequestBody SocioData socioData){
 		
 		Socio socio = new Socio();
-		socio.setEmail(email);
-		socio.setSenha(senha);
+		socio.setEmail(socioData.getEmail());
+		socio.setSenha(socioData.getSenha());
 		
 		try {
 			List<Socio> socios = socioDao.pesquisarPorAtributo(socio);

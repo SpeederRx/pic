@@ -1,4 +1,5 @@
 var picPagesApp = angular.module("PicPagesApp", ['ui.router', 'ngRoute']);
+
 var views = [
     {
         state: "cadastrarpropostacompra",
@@ -39,4 +40,30 @@ picPagesApp.factory('$crudFactory', ['$rootScope', '$resource', function ($rootS
             });
         }
     }
+}]);
+
+picPagesApp.controller('IndexController', ['$scope','$http', function($scope, $http) {
+         $scope.obterSocio = function(socio){
+            $http.post('/login', socio).then(function (response) {
+                if (response.status == 200){
+                    $scope.socio = response.data;
+                    console.log($scope.socio);
+                }
+            },
+            function (response) {
+                alert('Ocorreu um erro= ' + response.status);
+                console.log('Nao Deu boa' + response.status);
+            });
+         };       
+
+        $scope.socioAtivo = {
+            email: 'rodrigobsilva@live.com',
+            senha: 'senha'
+        };
+
+        $scope.obterSocio($scope.socioAtivo);
+
+
+        console.log("Guayraçu");
+
 }]);
