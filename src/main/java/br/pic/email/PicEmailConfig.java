@@ -14,12 +14,6 @@ import br.pic.model.data.SocioData;
 @Configuration
 public class PicEmailConfig {
 
-//	public static void main(String[] args) throws MessagingException {
-//		new PicEmailConfig();
-//	}
-//	
-//	public PicEmailConfig() throws MessagingException {
-	
 	public void EnviarEmail(SocioData socioData) throws MessagingException {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");

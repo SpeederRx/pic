@@ -31,9 +31,26 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 	}
 
 	@Override
-	public PropostaData toData(Proposta Model) {
-		// TODO Auto-generated method stub
-		return null;
+	public PropostaData toData(Proposta model) {
+		
+		if(model == null){
+			throw new IllegalArgumentException("Proposta nao pode ser nula.");
+		}
+		
+		PropostaData propostaData = new PropostaData();
+		
+		propostaData.setNome(model.getNome());
+		propostaData.setTipoProposta(model.getTipoProposta());
+		propostaData.setDataInicio(model.getDataInicio());
+		propostaData.setDataFim(model.getDataFim());
+		propostaData.setMinCotas(model.getMinCotas());
+		propostaData.setMaxCotas(model.getMaxCotas());
+		propostaData.setEstadoProposta(model.getEstadoProposta());
+		propostaData.setDescricao(model.getDescricao());
+		propostaData.setPercentLucro(model.getPercentLucro());
+		
+		return propostaData;
+		
 	}
 	
 }
