@@ -7,6 +7,8 @@ import br.pic.model.data.PropostaData;
 
 @Configuration
 public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
+	
+	
 
 	@Override
 	public Proposta toModel(PropostaData data) {
@@ -49,6 +51,11 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		propostaData.setEstadoProposta(model.getEstadoProposta());
 		propostaData.setDescricao(model.getDescricao());
 		propostaData.setPercentLucro(model.getPercentLucro());
+		
+		// inserir PorpostaData estadoPropostaString
+			
+		
+		
 		
 		return propostaData;
 		

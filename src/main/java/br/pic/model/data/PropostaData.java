@@ -8,11 +8,13 @@ public class PropostaData {
 	private Long id;
 	private String nome;
 	private Integer tipoProposta;
+	private String tipoPropostaString;
 	private Date dataInicio;
 	private Date dataFim;
 	private Double minCotas;
 	private Double maxCotas;
 	private Integer estadoProposta;
+	private String estadoPropostaString;
 	private List<LancamentoData> lancamentos;
 	private List<ParticipanteData> participantes;
 	private String descricao;
@@ -35,6 +37,12 @@ public class PropostaData {
 	}
 	public void setTipoProposta(Integer tipoProposta) {
 		this.tipoProposta = tipoProposta;
+	}
+	public String getTipoPropostaString() {
+		return tipoPropostaString;
+	}
+	public void setTipoPropostaString(String tipoPropostaString) {
+		this.tipoPropostaString = tipoPropostaString;
 	}
 	public Date getDataInicio() {
 		return dataInicio;
@@ -66,6 +74,12 @@ public class PropostaData {
 	public void setEstadoProposta(Integer estadoProposta) {
 		this.estadoProposta = estadoProposta;
 	}
+	public String getEstadoPropostaString() {
+		return estadoPropostaString;
+	}
+	public void setEstadoPropostaString(String estadoPropostaString) {
+		this.estadoPropostaString = estadoPropostaString;
+	}
 	public List<LancamentoData> getLancamentos() {
 		return lancamentos;
 	}
@@ -91,5 +105,5 @@ public class PropostaData {
 		this.percentLucro = percentLucro;
 	}
 	
-	
+		
 }
