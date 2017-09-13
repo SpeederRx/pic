@@ -13,13 +13,14 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	$scope.toggleLoginState = function(){
 			$scope.showCadastro = false;
 			$scope.showLogin = true;
+			$(window.location).attr('href',"#login");
 	};
 
 	$scope.setOffCadastroLogin = function(){
 		$scope.showCadastro = false;
 		$scope.showLogin = false;
 	};
-	/*/////////////Inicio variáveis para teste///////////////////////*/
+	/*/////////////Inicio variáveis para teste///////////////////////
 
 	$scope.socio = {
 			cpf: '05728048900',
@@ -43,7 +44,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	}
 
 
-	/*/////////////Fim variáveis para teste///////////////////////*/
+	/////////////Fim variáveis para teste///////////////////////*/
 	$scope.validaCpf = function() {
 
 		try {
@@ -102,15 +103,15 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	$scope.compararSenha = function(){
 		if($scope.validaSenha == null || $scope.validaSenha != $scope.socio.senha){
 			$scope.resultadoSenha = 'As senhas digitadas não correspondem';
-			return;
+			return false;
 		}
 		else if($scope.validaSenha == $scope.socio.senha){
 			$scope.resultadoSenha = '';
-			return;
+			return true;
 		}
 		else{
 			$scope.resultadoSenha = 'As senhas digitadas não correspondem';
-			return;
+			return false;
 		}
 	};
 
@@ -138,6 +139,12 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 				alert("Por favor preencher o CPF");
 				return;
 			}
+
+			if($scope.compararSenha() == false){
+				alert("Por verifique as senhas digitadas");
+				return;
+			}
+
 			if($scope.socio.dataNasc == null || $scope.socio.dataNasc == ""){
 				alert("Por favor preencher data de nascimento");
 				return;

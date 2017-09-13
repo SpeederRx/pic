@@ -14,7 +14,15 @@ var views = [
         caminho: "pages",
         nomeArquivo: "cadastrarpropostavenda",
         controller: "cadastrarpropostavenda"
+    },
+    {
+        state: "visaogeral",
+        url: "visaogeral",
+        caminho: "pages",
+        nomeArquivo: "visaogeral",
+        controller: "visaogeral"
     }
+
 ];
 
 //a função abaixo realiza a configuração de cada controller mapeando cada template(view) com seu respectivo controller

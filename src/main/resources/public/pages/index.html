@@ -20,6 +20,12 @@
     <!-- Custom CSS -->
     <link href="dist/css/pic_custom.css" rel="stylesheet">
 
+        <!-- DataTables CSS -->
+    <link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+    <link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Morris Charts CSS -->
     <link href="vendor/morrisjs/morris.css" rel="stylesheet">
 
@@ -33,6 +39,7 @@
     <script src="js/angular-route.js"></script>
     <script src="js/controllers/cadastrarpropostavendaController.js"></script>
     <script src="js/controllers/cadastrarpropostacompraController.js"></script>
+    <script src="js/controllers/visaogeralController.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -286,7 +293,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Visão Geral</a>
+                            <a ui-sref="visaogeral"><i class="fa fa-dashboard fa-fw"></i> Visão Geral</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Proposta<span class="fa arrow"></span></a>
@@ -315,7 +322,8 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12" ui-view>
-                    
+            
+                    <!-- Conteúdo Dinamico -->
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -337,6 +345,20 @@
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/pic_custom.js"></script>
 
+        <!-- DataTables JavaScript -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
+    
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+    
 </body>
 
 </html>

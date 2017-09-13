@@ -94,68 +94,74 @@
 
 <!-- LAYER NR. 2 -->
 <div class="tp-caption lfl tp-resizeme"
-data-x="637"
-data-y="365"
-data-speed="1000"
-data-start="8000"
-data-easing="Power3.easeOut"
-data-splitin="none"
-data-splitout="none"
-data-elementdelay="0.05"
-data-endelementdelay="0.1"
-data-endspeed="500"
+	data-x="637"
+	data-y="365"
+	data-speed="1000"
+	data-start="8000"
+	data-easing="Power3.easeOut"
+	data-splitin="none"
+	data-splitout="none"
+	data-elementdelay="0.05"
+	data-endelementdelay="0.1"
+	data-endspeed="500"
 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
   <h2 class="small-title second-title">Invista em grandes empresas</h2>
 </div>
 
 <!-- LAYER NR. 3 -->
 <div class="tp-caption  lfl tp-resizeme"
-data-x="637"
-data-y="420"
-data-speed="1000"
-data-start="8600"
-data-easing="Power3.easeOut"
-data-splitin="none"
-data-splitout="none"
-data-elementdelay="0.05"
-data-endelementdelay="0.1"
-data-endspeed="500"
-data-endeasing="Power4.easeIn"
+	data-x="637"
+	data-y="420"
+	data-speed="1000"
+	data-start="8600"
+	data-easing="Power3.easeOut"
+	data-splitin="none"
+	data-splitout="none"
+	data-elementdelay="0.05"
+	data-endelementdelay="0.1"
+	data-endspeed="500"
+	data-endeasing="Power4.easeIn"
 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
 <h2  class="small-title second-title">Propostas de Venda</h2>
 </div>
 <!-- LAYER NR. 4 -->
 <div class="tp-caption  lfl tp-resizeme"
-data-x="637"
-data-y="475"
-data-speed="1000"
-data-start="9400"
-data-easing="Power3.easeOut"
-data-splitin="none"
-data-splitout="none"
-data-elementdelay="0.05"
-data-endelementdelay="0.1"
-data-endspeed="500"
-data-endeasing="Power4.easeIn"
-style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-<h2 class="small-title second-title"> Propostas de Compra</h2>
+	data-x="637"
+	data-y="475"
+	data-speed="1000"
+	data-start="9400"
+	data-easing="Power3.easeOut"
+	data-splitin="none"
+	data-splitout="none"
+	data-elementdelay="0.05"
+	data-endelementdelay="0.1"
+	data-endspeed="500"
+	data-endeasing="Power4.easeIn"
+	style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
+	<h2 class="small-title second-title"> Propostas de Compra</h2>
 </div>
 
 <!-- LAYER NR. 5 -->
 <div class="tp-caption lfr tp-resizeme start-button"
-data-x="637"
-data-y="540"
-data-speed="1000"
-data-start="10500"
-data-easing="Power3.easeOut"
-data-splitin="none"
-data-splitout="none"
-data-elementdelay="0.05"
-data-endelementdelay="0.1"
-data-endspeed="500"
-data-endeasing="Power4.easeIn"
+	data-x="637"
+	data-y="540"
+	data-speed="1000"
+	data-start="10500"
+	data-easing="Power3.easeOut"
+	data-splitin="none"
+	data-splitout="none"
+	data-elementdelay="0.05"
+	data-endelementdelay="0.1"
+	data-endspeed="500"
+	data-endeasing="Power4.easeIn"
 style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-<button type="button" class="btn btn-primary" style="background-color: #e84700;border:1px solid #e95e1d;">Acesse</button>
+<button 
+	type="button"
+	class="btn btn-primary"
+	style="background-color: #e84700;border:1px solid #e95e1d;"
+	ng-click="toggleLoginState()"
+ 	onclick="location.href='#login'">Acesse
+</button>
 </div>
 </li>
 
@@ -266,7 +272,7 @@ style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
   data-endspeed="500"
   data-endeasing="Power4.easeIn"
   style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-  <a href="#contact"><h1><span>Cadastre-se </span> OU ACESSE </h1></a>
+  <a href=""><h1><span>Cadastre-se </span> OU ACESSE </h1></a>
 </div>
 
 <!-- LAYER NR. 2 -->
@@ -315,7 +321,7 @@ data-endelementdelay="0.1"
 data-endspeed="1000"
 data-endeasing="Power1.easeOut"
 style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
-<button type="button" class="btn btn-danger" style="background-color:transparent;" ng-click="toggleLoginState()" onclick="location.href='#login'">Acesse</button>
+<button type="button" class="btn btn-danger" style="background-color:transparent;" ng-click="toggleLoginState()">Acesse</button>
 </div>
 <!-- LAYER NR. 5 -->
 <div class="lfr tp-caption tp-resizeme start-button"
@@ -375,7 +381,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
             <li ><a class="page-scroll" href="#home">Home</a></li>
             <li> <a class="page-scroll" href="#about">Sobre nós</a></li>
             <li> <a class="page-scroll" href="#team">Equipe</a></li>
-            <li class="dropdown"> <a class="page-scroll drop dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-click="setOffCadastroLogin()" href="#contact">Acesse</a>
+            <li class="dropdown"> <a class="page-scroll drop dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ng-click="setOffCadastroLogin()" href="">Acesse</a>
               <ul class="dropdown-menu" role="menu">
                 <li><a ng-click="toggleCadatroState()" href="#contact">Cadastre-se</a></li>
                 <li><a ng-click="toggleLoginState()" href="#login">Efetuar Login</a></li>
@@ -672,8 +678,6 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
             <p class="footer-heading">link úteis</p>
             <ul class="footermenu">
               <li><a data-scroll data-options='{ "easing": "easeInQuad" }'  href="#about">Sobre nós</a></li>
-              <li><a data-scroll data-options='{ "easing": "easeInQuad" }'  href="#services">Serviços</a></li>
-              <li><a data-scroll data-options='{ "easing": "easeInQuad" }'  href="#product">Produtos</a></li>
               <li><a data-scroll data-options='{ "easing": "easeInQuad" }'  href="#team">Equipe</a></li>
               <li><a data-scroll data-options='{ "easing": "easeInQuad" }' ng-click="toggleCadatroState()" href="#contact">Cadastre-se</a></li>
             </ul>
@@ -710,10 +714,8 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
   <ul>
     <li><a href="#">home</a></li>
     <li><a href="#about">Sobre nós</a></li>
-    <li><a href="#services">Serviços</a></li>
-    <li><a href="#product">Produtos</a></li>
     <li><a href="#team">Equipe</a></li>
-    <li><a href="#blog">Blog</a>
+
       <ul>
         <li><a href="blog-full-width.html">full width blog</a></li>
         <li><a href="blog-sidebar.html">sidebar blog</a></li>
