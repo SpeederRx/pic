@@ -18,6 +18,8 @@ public class SocioService implements PicService<Socio>{
 	@Inject
 	private EnderecoService enderecoService;
 	
+	
+	
 	@Override
 	public void validar(Socio obj) throws PicException {
 		
@@ -48,6 +50,8 @@ public class SocioService implements PicService<Socio>{
 	@Override
 	public void salvar(Socio obj) throws PicException {
 		validar(obj);
+		
+		
 		socioDao.salvar(obj);
 	}
 	

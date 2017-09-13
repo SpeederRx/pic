@@ -44,7 +44,8 @@ dependencies {
   
 	// https://mvnrepository.com/artifact/org.springframework/spring-context-support
 	compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.0.RELEASE'
-
+	compile 'javax.mail:mail:1.4.1' 
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
     
 }
 
