@@ -5,21 +5,27 @@ import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
+import br.pic.model.data.SocioData;
+
+@Configuration
 public class PicEmailConfig {
 
-	public static void main(String[] args) throws MessagingException {
-		new PicEmailConfig();
-	}
+//	public static void main(String[] args) throws MessagingException {
+//		new PicEmailConfig();
+//	}
+//	
+//	public PicEmailConfig() throws MessagingException {
 	
-	public PicEmailConfig() throws MessagingException {
+	public void EnviarEmail(SocioData socioData) throws MessagingException {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
 	    mailSender.setPort(587);
 	    mailSender.setPassword("gitpull10");
-	    mailSender.setUsername("contato.pic");
+	    mailSender.setUsername("picdonotreply");
 	    
 	    Properties properties = new Properties();
 	    properties.put("mail.smtp.starttls.enable", "true");
@@ -33,9 +39,10 @@ public class PicEmailConfig {
 		
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);
-		helper.setTo("rodrigobsilva@live.com");
-		helper.setFrom("contato.pic@outlook.com");
-		helper.setText("Thank you for ordering!");
+		helper.setTo(socioData.getEmail());
+		helper.setFrom("picdonotreply@gmail.com");
+		helper.setText(socioData.getNome() + "  Seja bem vindo ao PIC");
+		helper.setSubject("Bem Vindo ao PIC");
 
 		mailSender.send(message);
 		

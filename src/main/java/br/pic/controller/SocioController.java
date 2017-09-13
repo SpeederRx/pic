@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.pic.email.PicEmailConfig;
 import br.pic.exception.PicException;
 import br.pic.model.data.SocioData;
 import br.pic.populate.SocioPopulate;
@@ -28,10 +29,14 @@ public class SocioController {
 	@Inject
 	private SocioPopulate socioPopulate;
 	
+	@Inject
+	private PicEmailConfig emailConfig;
+	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<HttpStatus> save(@RequestBody SocioData socioData) {
+	public ResponseEntity<HttpStatus> save(@RequestBody SocioData socioData) throws Exception {
 		try {
 			socioService.salvar(socioPopulate.toModel(socioData));	
+			emailConfig.EnviarEmail(socioData);
 		} catch (PicException e) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Erro", e.getLocalizedMessage());
