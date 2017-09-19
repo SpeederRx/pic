@@ -188,9 +188,20 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 		
 	};
 
-	$scope.efetuarLogin= function(){
-		$(window.document.location).attr('href',"pages/index.html");
-	};
+	$scope.efetuarLogin = function(){
+        
+            $http.post('/login', $scope.socio).then(function (response) {
+                if (response.status == 200){
+                    $scope.socio = response.data;
+                    console.log($scope.socio);
+            		$(window.document.location).attr('href',"pages/index.html");
+                }
+            },
+            function (response) {
+                alert('Ocorreu um erro= O login ou senha estão incorretos');
+                console.log('Nao Deu boa' + response.status);
+            });
+};
 
 	$scope.validarCarteira = function(){
 
