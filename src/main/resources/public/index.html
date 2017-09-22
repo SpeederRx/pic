@@ -488,13 +488,13 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
         </div><!-- col-xs-12 -->
         <div class="wow zoomIn col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
           <form name="cadForm" id='contact_form'>
-            <div class="form-inline">
-              <span class="form-group col-sm-12">{{cpfAlert}}</span>
+            <div>
+              <span class="col-sm-12 section-alert">{{cpfAlert}}</span>
               <div class="form-group col-sm-6">
                 <input type="text" class="form-control" name="cpf" id="InputCPF" placeholder="CPF" ng-model="socio.cpf" ng-blur="validaCpf()">
               </div>
               <div class="form-group col-sm-6">
-                <input type="date" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" ng-model="socio.dataNasc">
+                <input type="text" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" ng-model="socio.dataNasc" onfocus="(this.type='date')" data-toggle="tooltip" data-placement="right" title="Data de Nascimento">
               </div>
               <div class="form-group col-sm-6">
                 <input type="text" class="form-control" name="nome" id="InputNome"  placeholder="nome" ng-model="socio.nome">
@@ -511,7 +511,7 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
                 <span>{{resultadoSenha}}</span>
               </div>
 			  <div class="form-group col-sm-12">
-                <table id="mostra"></table>
+                <table id="mostra" ng-model="forcaSenha"></table>
               </div>
             </div>
 

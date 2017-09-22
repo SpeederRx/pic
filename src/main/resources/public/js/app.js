@@ -143,9 +143,16 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 			}
 
 			if($scope.compararSenha() == false){
-				alert("Por verifique as senhas digitadas");
+				alert("Por favor verifique as senhas digitadas");
 				return;
 			}
+			
+			$scope.validarForcaSenha();
+			
+            if($scope.forcaSenha < 30 || $scope.forcaSenha == null){
+				alert("Por favor, garanta que a senha é no mínimo média.");
+				return;                
+            }
 
 			if($scope.socio.dataNasc == null || $scope.socio.dataNasc == ""){
 				alert("Por favor preencher data de nascimento");
@@ -207,5 +214,26 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 
 	};
 
-
+	$scope.validarForcaSenha = function(){
+		var senha = document.getElementById("InputSenha").value;
+		$scope.forcaSenha = 0;
+		    
+		    if((senha.length >= 4) && (senha.length <= 7)){
+		        $scope.forcaSenha += 10;
+		    }else if(senha.length>7){
+		    	$scope.forcaSenha += 25;
+		    }
+		    if(senha.match(/[a-z]+/)){
+		    	$scope.forcaSenha += 20;
+		    }
+		    if(senha.match(/[A-Z]+/)){
+		    	$scope.forcaSenha += 20;
+		    }
+		    if(senha.match(/[@]+/)){
+		    	$scope.forcaSenha += 25;
+		    }
+		    if(senha.match(/[$]+/)){
+		    	$scope.forcaSenha += 25;
+		    }
+	};
 }]);

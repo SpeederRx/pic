@@ -1092,7 +1092,7 @@ text-align          : center;
     left            : 0;
     height          : 100%;
     width           : 100%;
-    background      : rgba(0,0,0,0.85);
+    background      : rgba:(273, 0,0, 0.9);
    
 }
 
@@ -1427,7 +1427,6 @@ padding-top     : 19px;
 ==========================================================*/
 
 .contact-wrapper{
-    background      : #161616 url("../img/contact-back-img.jpg") no-repeat center center fixed;
     position        : relative;
     background-size : cover;
 }
@@ -1438,12 +1437,12 @@ padding-top     : 19px;
     vertical-align  : middle;
 }
 
-span.alert{
-    color: yellow;
+.contact-wrapper .section-title{
+    color   : blue;
 }
 
-.contact-wrapper .section-title{
-    color   : #fff;
+.contact-wrapper .section-alert{
+    color   : red  ;
 }
 .contact-wrapper .p-padding{
     color   : #fff;
@@ -1476,9 +1475,9 @@ span.alert{
 }
 
 .contact-wrapper .costom-btn:hover{
-    background          : rgba(232, 71, 0, 0);
-    color               : #ffffff;
-    border              : 1px solid #ffffff;
+    background          : rgba(0, 255, 0, 0.5);
+    color               : #00aa00;
+    border              : 1px solid #00ff00;
 }
 
 .contact-wrapper .success, .contact-wrapper .error{

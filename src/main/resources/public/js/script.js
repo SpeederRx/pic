@@ -318,28 +318,28 @@ function verifica(){
         forca += 25;
     }
     if(senha.match(/[a-z]+/)){
-        forca += 10;
+        forca += 20;
     }
     if(senha.match(/[A-Z]+/)){
         forca += 20;
     }
-    if(senha.match(/d+/)){
-        forca += 20;
+    if(senha.match(/[@]+/)){
+        forca += 25;
     }
-    if(senha.match(/W+/)){
+    if(senha.match(/[$]+/)){
         forca += 25;
     }
     return mostra_res();
 }
 function mostra_res(){
     if(forca < 30){
-        mostra.innerHTML = '<tr><td bgcolor="red" width="'+(forca*8)+'"></td><td>Fraca </td></tr>';
+        mostra.innerHTML = '<tr><td bgcolor="red" width="'+(forca*8)+'"></td><td ng-model="forcaSenha" value="fraca">Fraca </td></tr>';
     }else if((forca >= 30) && (forca < 60)){
-        mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+(forca*8)+'"></td><td>Média </td></tr>';;
+        mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+(forca*8)+'"></td><td ng-model="forcaSenha" value="media">Média </td></tr>';;
     }else if((forca >= 60) && (forca < 85)){
-        mostra.innerHTML = '<tr><td bgcolor="blue" width="'+(forca*8)+'"></td><td>Forte </td></tr>';
+        mostra.innerHTML = '<tr><td bgcolor="blue" width="'+(forca*8)+'"></td><td ng-model="forcaSenha" value="forte">Forte </td></tr>';
     }else{
-        mostra.innerHTML = '<tr><td bgcolor="green" width="'+(forca*8)+'"></td><td>Excelente </td></tr>';
+        mostra.innerHTML = '<tr><td bgcolor="green" width="'+(forca*8)+'"></td><td ng-model="forcaSenha" value="excelente">Excelente </td></tr>';
     }
 }
 
