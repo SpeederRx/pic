@@ -21,6 +21,34 @@ var views = [
         caminho: "pages",
         nomeArquivo: "visaogeral",
         controller: "visaogeral"
+    },
+    {
+        state: "criarativo",
+        url: "criarativo",
+        caminho: "pages",
+        nomeArquivo: "criarativo",
+        controller: "criarativo"
+    },
+    {
+        state: "editarativo",
+        url: "editarativo",
+        caminho: "pages",
+        nomeArquivo: "editarativo",
+        controller: "editarativo"
+    },
+    {
+        state: "consultarSaldo",
+        url: "consultarSaldo",
+        caminho: "pages",
+        nomeArquivo: "consultarSaldo",
+        controller: "consultarSaldo"
+    },
+    {
+        state: "consultarAtivos",
+        url: "consultarAtivos",
+        caminho: "pages",
+        nomeArquivo: "consultarAtivos",
+        controller: "consultarAtivos"
     }
 
 ];

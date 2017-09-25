@@ -1,0 +1,57 @@
+<script src="js/controllers/editarativoController.js"></script>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Inserir um novo ativo</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <form class="panel panel-default" name="form">
+            <div class="panel-heading">
+                Dados do ativo
+            </div>
+                 <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Selecione um ativo para alteração</label>
+                        <select class="form-control" ng-model="ativo.descricao" required>
+                            <option ng-repeat="option in ativos.availableOptions" value="{{option.descricao}}">{{option.descricao}}</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="form-group">
+                            <label>Descrição do Ativo</label>
+                            <input type="text" class="form-control" ng-model="ativo.descricao" required>
+                        </div>
+                    </div>                                
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>Selecione um tipo de ativo</label>
+                            <select class="form-control" ng-model="ativo.id" required>
+                            	<option ng-repeat="optionToChange in tiposAtivo.availableOptions" value="{{optionToChange.id}}">{{optionToChange.descricao}}</option>
+                            </select>
+                        </div>
+                    </div>                                                     
+                </div>
+                <br/>
+                <div class="row">
+                    <fieldset class="col-lg-12">
+                        <legend></legend>
+                        <div class="col-lg-12">
+                            <button class="btn btn-primary">Cancelar</button>                         
+                            <button class="btn btn-primary" ng-disabled="!form.$valid">Salvar Ativo</button>
+                        </div>
+                    </fieldset>
+                </div>                                                       
+            </div>
+             <!-- /.panel-body -->
+        </form>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->

@@ -21,10 +21,10 @@
     <link href="dist/css/pic_custom.css" rel="stylesheet">
 
         <!-- DataTables CSS -->
-    <link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-    <link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="vendor/morrisjs/morris.css" rel="stylesheet">
@@ -40,6 +40,10 @@
     <script src="js/controllers/cadastrarpropostavendaController.js"></script>
     <script src="js/controllers/cadastrarpropostacompraController.js"></script>
     <script src="js/controllers/visaogeralController.js"></script>
+    <script src="js/controllers/criarativoController.js"></script>
+    <script src="js/controllers/editarativoController.js"></script>
+    <script src="js/controllers/consultarAtivosController.js"></script>
+    <script src="js/controllers/consultarSaldoController.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -296,7 +300,19 @@
                             <a ui-sref="visaogeral"><i class="fa fa-dashboard fa-fw"></i> Visão Geral</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Proposta<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Consulta<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a ui-sref="consultarAtivos"> Saldo Financeiro</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="consultarSaldo"> Saldo de Ativos</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>                        
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Propostas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a ui-sref="cadastrarpropostacompra"> Criar proposta de Compra</a>
@@ -306,6 +322,17 @@
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Ativos<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a ui-sref="criarativo"> Cadastrar novo ativo</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="editarativo"> Editar ativo</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Meu Perfil</a>
