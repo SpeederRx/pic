@@ -51,4 +51,10 @@ public class OperadorService implements PicService<Operador>{
 		
 	}
 
+	@Override
+	public void atualizar(Operador obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

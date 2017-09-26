@@ -45,4 +45,10 @@ public class EnderecoService implements PicService<Endereco> {
 		
 	}
 
+	@Override
+	public void atualizar(Endereco obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

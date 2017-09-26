@@ -40,4 +40,10 @@ public class SocioAtivoService implements PicService<SocioAtivo>{
 		
 	}
 
+	@Override
+	public void atualizar(SocioAtivo obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

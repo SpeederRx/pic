@@ -50,4 +50,10 @@ public class PropostaService implements PicService<Proposta>{
 		
 	}
 
+	@Override
+	public void atualizar(Proposta obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

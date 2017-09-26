@@ -56,4 +56,10 @@ public class SocioService implements PicService<Socio>{
 	}
 	
 	
+	public void atualizar(Socio obj) throws PicException {
+		validar(obj);
+		socioDao.atualizar(obj);
+	}
+	
+	
 }

@@ -39,5 +39,11 @@ public class ParticipanteService implements PicService<Participante>{
 		
 	}
 
+	@Override
+	public void atualizar(Participante obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

@@ -37,4 +37,10 @@ public class AtivoService implements PicService<Ativo>{
 		
 	}
 
+	@Override
+	public void atualizar(Ativo obj) throws PicException {
+		validar(obj);
+		ativoDao.atualizar(obj);		
+	}
+
 }

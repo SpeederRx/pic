@@ -43,4 +43,10 @@ public class ContaPrincipalService implements PicService<ContaPrincipal> {
 		
 	}
 
+	@Override
+	public void atualizar(ContaPrincipal obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -56,5 +56,11 @@ public class LancamentoService implements PicService<Lancamento>{
 		validar(obj);
 		lancamentoDao.salvar(obj);
 	}
+
+	@Override
+	public void atualizar(Lancamento obj) throws PicException {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

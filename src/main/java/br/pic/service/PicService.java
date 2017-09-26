@@ -5,4 +5,5 @@ import br.pic.exception.PicException;
 public interface PicService <T>{
 	public void validar(T obj) throws PicException;
 	public void salvar(T obj) throws PicException;
+	public void atualizar(T obj) throws PicException;
 }
