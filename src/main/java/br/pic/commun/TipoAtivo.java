@@ -22,4 +22,14 @@ public enum TipoAtivo {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public static TipoAtivo getPorCodigo(Integer codigo) {
+		for (TipoAtivo tipoAtivo : values()) {
+			if(tipoAtivo.getCodigo().equals(codigo)) {
+				return tipoAtivo;
+			}
+		}
+		return null;
+	}
+	
 }

@@ -6,6 +6,7 @@ public class AtivoData {
 	private Long id;
 	private String descricao;
 	private Integer tipoAtivo;
+	private String tipoAtivoString;
 
 	public Long getId() {
 		return id;
@@ -29,6 +30,14 @@ public class AtivoData {
 
 	public void setTipoAtivo(Integer tipoAtivo) {
 		this.tipoAtivo = tipoAtivo;
+	}
+
+	public String getTipoAtivoString() {
+		return tipoAtivoString;
+	}
+
+	public void setTipoAtivoString(String tipoAtivoString) {
+		this.tipoAtivoString = tipoAtivoString;
 	}
 	
 	

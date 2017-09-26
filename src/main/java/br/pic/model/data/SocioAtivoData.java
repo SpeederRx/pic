@@ -1,13 +1,10 @@
 package br.pic.model.data;
 
-import br.pic.model.Ativo;
-import br.pic.model.Socio;
-
 public class SocioAtivoData {
 	
 	private Long id;
-	private Socio socio;
-	private Ativo ativo;
+	private SocioData socioData;
+	private AtivoData ativoData;
 	private Double cotas;
 	
 	public Long getId() {
@@ -16,17 +13,17 @@ public class SocioAtivoData {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Socio getSocio() {
-		return socio;
+	public SocioData getSocioData() {
+		return socioData;
 	}
-	public void setSocio(Socio socio) {
-		this.socio = socio;
+	public void setSocioData(SocioData socioData) {
+		this.socioData = socioData;
 	}
-	public Ativo getAtivo() {
-		return ativo;
+	public AtivoData getAtivoData() {
+		return ativoData;
 	}
-	public void setAtivo(Ativo ativo) {
-		this.ativo = ativo;
+	public void setAtivoData(AtivoData ativoData) {
+		this.ativoData = ativoData;
 	}
 	public Double getCotas() {
 		return cotas;
@@ -37,5 +34,4 @@ public class SocioAtivoData {
 	
 	
 	
-
 }

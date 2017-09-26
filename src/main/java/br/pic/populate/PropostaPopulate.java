@@ -2,6 +2,8 @@ package br.pic.populate;
 
 import org.springframework.context.annotation.Configuration;
 
+import br.pic.commun.EstadoProposta;
+import br.pic.commun.TipoProposta;
 import br.pic.model.Proposta;
 import br.pic.model.data.PropostaData;
 
@@ -9,7 +11,6 @@ import br.pic.model.data.PropostaData;
 public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 	
 	
-
 	@Override
 	public Proposta toModel(PropostaData data) {
 		
@@ -52,10 +53,17 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		propostaData.setDescricao(model.getDescricao());
 		propostaData.setPercentLucro(model.getPercentLucro());
 		
-		// inserir PorpostaData estadoPropostaString
+		EstadoProposta estadoProposta = EstadoProposta.getPorCodigo(model.getEstadoProposta());
+		if(estadoProposta != null) {
+			propostaData.setEstadoPropostaString(estadoProposta.getDescricao());
+		}
+		
+		
+		TipoProposta tipoProposta = TipoProposta.getPorCodigo(model.getTipoProposta());
+		if(tipoProposta != null) {
+			propostaData.setTipoPropostaString(tipoProposta.getDescricao());
 			
-		
-		
+		}
 		
 		return propostaData;
 		

@@ -24,6 +24,15 @@ public enum EstadoProposta {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public static EstadoProposta getPorCodigo(Integer codigo) {
+		for (EstadoProposta estadoProposta : values()) {
+			if(estadoProposta.getCodigo().equals(codigo)) {
+				return estadoProposta;
+			}
+		}
+		return null;
+	}
 
 
 }

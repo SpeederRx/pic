@@ -24,4 +24,14 @@ public enum TipoProposta {
 		return descricao;
 	}
 
+	public static TipoProposta getPorCodigo(Integer codigo) {
+		for (TipoProposta tipoProposta : values()) {
+			if(tipoProposta.getCodigo().equals(codigo)) {
+				return tipoProposta;
+			}
+		}
+		return null;
+	}
+	
+	
 }

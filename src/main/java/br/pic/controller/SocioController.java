@@ -37,6 +37,7 @@ public class SocioController {
 		try {
 			socioService.salvar(socioPopulate.toModel(socioData));	
 			emailConfig.EnviarEmail(socioData);
+			
 		} catch (PicException e) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Erro", e.getLocalizedMessage());
