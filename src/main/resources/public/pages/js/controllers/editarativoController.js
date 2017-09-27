@@ -32,10 +32,10 @@ picPagesApp.controller('editarativoController', ['$scope', '$http', function($sc
     };
 	$scope.alterarAtivo = function(ativo){
 
-		$http.post('/ativo', ativo, ativo.id).then(function (response) {
+		$http.post('/ativo', ativo).then(function (response) {
 				if (response.status == 200){
 					alert("Alteração efetuada com sucesso.");
-					
+					$scope.getAtivos();
 				}
 			},
 			function (response) {
