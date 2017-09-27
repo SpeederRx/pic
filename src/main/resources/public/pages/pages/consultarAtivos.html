@@ -8,30 +8,15 @@
              <table class="table table-hover">
                  <thead>
                      <tr>
-                         <th>#</th>
-                         <th>First Name</th>
-                         <th>Last Name</th>
-                         <th>Username</th>
+                         <th>Ativo</th>
+                         <th>Total de Cotas</th>
+                         
                      </tr>
                  </thead>
-                 <tbody>
+                 <tbody data-ng-repeat="ativo in ativos">
                      <tr>
-                         <td>1</td>
-                         <td>Mark</td>
-                         <td>Otto</td>
-                         <td>@mdo</td>
-                     </tr>
-                     <tr>
-                         <td>2</td>
-                         <td>Jacob</td>
-                         <td>Thornton</td>
-                         <td>@fat</td>
-                     </tr>
-                     <tr>
-                         <td>3</td>
-                         <td>Larry</td>
-                         <td>the Bird</td>
-                         <td>@twitter</td>
+                         <td>{{ativo.ativoData.descricao}}</td>
+                         <td>{{ativo.cotas}}</td>
                      </tr>
                  </tbody>
              </table>
