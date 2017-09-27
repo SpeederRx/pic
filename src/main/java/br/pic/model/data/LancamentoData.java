@@ -3,15 +3,16 @@ package br.pic.model.data;
 public class LancamentoData {
 	
 	private Long id;
-	private ContaPrincipalData contaPrincipal;
-	private AtivoData ativo;
-	private PropostaData proposta;
+	private ContaPrincipalData contaPrincipalData;
+	private AtivoData ativoData;
+	private PropostaData propostaData;
 	private Double valorTotalLanc;
 	private String descricao;
 	private Integer qtdeLancada;
 	private Integer tipoLancamento;
 	private OperadorData operador;
 	private Integer estadoLancamento;
+	private String estadoLancamentoString;
 	
 	public Long getId() {
 		return id;
@@ -19,23 +20,23 @@ public class LancamentoData {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public ContaPrincipalData getContaPrincipal() {
-		return contaPrincipal;
+	public ContaPrincipalData getContaPrincipalData() {
+		return contaPrincipalData;
 	}
-	public void setContaPrincipal(ContaPrincipalData contaPrincipal) {
-		this.contaPrincipal = contaPrincipal;
+	public void setContaPrincipalData(ContaPrincipalData contaPrincipalData) {
+		this.contaPrincipalData = contaPrincipalData;
 	}
-	public AtivoData getAtivo() {
-		return ativo;
+	public AtivoData getAtivoData() {
+		return ativoData;
 	}
-	public void setAtivo(AtivoData ativo) {
-		this.ativo = ativo;
+	public void setAtivoData(AtivoData ativoData) {
+		this.ativoData = ativoData;
 	}
-	public PropostaData getProposta() {
-		return proposta;
+	public PropostaData getPropostaData() {
+		return propostaData;
 	}
-	public void setProposta(PropostaData proposta) {
-		this.proposta = proposta;
+	public void setPropostaData(PropostaData propostaData) {
+		this.propostaData = propostaData;
 	}
 	public Double getValorTotalLanc() {
 		return valorTotalLanc;
@@ -73,8 +74,12 @@ public class LancamentoData {
 	public void setEstadoLancamento(Integer estadoLancamento) {
 		this.estadoLancamento = estadoLancamento;
 	}
+	public String getEstadoLancamentoString() {
+		return estadoLancamentoString;
+	}
+	public void setEstadoLancamentoString(String estadoLancamentoString) {
+		this.estadoLancamentoString = estadoLancamentoString;
+	}
 	
 	
-
-
 }

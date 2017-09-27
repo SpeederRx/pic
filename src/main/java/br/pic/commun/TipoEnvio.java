@@ -22,4 +22,14 @@ public enum TipoEnvio {
 		return descricao;
 	}
 	
+	public static TipoEnvio getPorCodigo(Integer codigo) {
+		for (TipoEnvio tipoEnvio : values()) {
+			if(tipoEnvio.getCodigo().equals(codigo)) {
+				return tipoEnvio;
+			}
+		}
+		return null;
+	}
+
+	
 }

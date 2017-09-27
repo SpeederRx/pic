@@ -21,5 +21,14 @@ public enum EstadoConta {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public static EstadoConta getPorCodigo(Integer codigo) {
+		for (EstadoConta estadoConta : values()) {
+			if(estadoConta.getCodigo().equals(codigo)) {
+				return estadoConta;
+			}
+		}
+		return null;
+	}
 
 }

@@ -1,4 +1,4 @@
-package br.pic.populate;
+ package br.pic.populate;
 
 import org.springframework.context.annotation.Configuration;
 

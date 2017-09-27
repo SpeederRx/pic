@@ -9,7 +9,7 @@ public class OperadorData {
 	private String cpf;
 	private Date dataNasc;
 	private String email;
-	private EnderecoData endereco;
+	private EnderecoData enderecoData;
 	private String telefone;
 	private Long nivelAcesso;
 	private String senha;
@@ -45,11 +45,11 @@ public class OperadorData {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public EnderecoData getEndereco() {
-		return endereco;
+	public EnderecoData getEnderecoData() {
+		return enderecoData;
 	}
-	public void setEndereco(EnderecoData endereco) {
-		this.endereco = endereco;
+	public void setEnderecoData(EnderecoData enderecoData) {
+		this.enderecoData = enderecoData;
 	}
 	public String getTelefone() {
 		return telefone;
@@ -75,8 +75,5 @@ public class OperadorData {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
-	
 	
 }

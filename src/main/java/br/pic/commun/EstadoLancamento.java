@@ -22,5 +22,14 @@ public enum EstadoLancamento {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public static EstadoLancamento getPorCodigo(Integer codigo) {
+		for (EstadoLancamento estadoLancamento : values()) {
+			if(estadoLancamento.getCodigo().equals(codigo)) {
+				return estadoLancamento;
+			}
+		}
+		return null;
+	}
 
 }

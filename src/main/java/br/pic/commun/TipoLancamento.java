@@ -22,5 +22,14 @@ public enum TipoLancamento {
 	public String getDescricao() {
 		return descricao;
 	}
+	
+	public static TipoLancamento getPorCodigo(Integer codigo) {
+		for (TipoLancamento tipoLancamento : values()) {
+			if(tipoLancamento.getCodigo().equals(codigo)) {
+				return tipoLancamento;
+			}
+		}
+		return null;
+	}
 
 }

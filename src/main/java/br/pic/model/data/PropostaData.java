@@ -15,8 +15,8 @@ public class PropostaData {
 	private Double maxCotas;
 	private Integer estadoProposta;
 	private String estadoPropostaString;
-	private List<LancamentoData> lancamentos;
-	private List<ParticipanteData> participantes;
+	private List<LancamentoData> lancamentosData;
+	private List<ParticipanteData> participantesData;
 	private String descricao;
 	private Double percentLucro;
 	
@@ -80,17 +80,17 @@ public class PropostaData {
 	public void setEstadoPropostaString(String estadoPropostaString) {
 		this.estadoPropostaString = estadoPropostaString;
 	}
-	public List<LancamentoData> getLancamentos() {
-		return lancamentos;
+	public List<LancamentoData> getLancamentosData() {
+		return lancamentosData;
 	}
-	public void setLancamentos(List<LancamentoData> lancamentos) {
-		this.lancamentos = lancamentos;
+	public void setLancamentosData(List<LancamentoData> lancamentosData) {
+		this.lancamentosData = lancamentosData;
 	}
-	public List<ParticipanteData> getParticipantes() {
-		return participantes;
+	public List<ParticipanteData> getParticipantesData() {
+		return participantesData;
 	}
-	public void setParticipantes(List<ParticipanteData> participantes) {
-		this.participantes = participantes;
+	public void setParticipantesData(List<ParticipanteData> participantesData) {
+		this.participantesData = participantesData;
 	}
 	public String getDescricao() {
 		return descricao;
@@ -105,5 +105,5 @@ public class PropostaData {
 		this.percentLucro = percentLucro;
 	}
 	
-		
+	
 }
