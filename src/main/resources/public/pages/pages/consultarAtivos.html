@@ -1,115 +1,43 @@
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">Criar proposta de Compra</h1>
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Dados da proposta
-            </div>
-            <form class="panel-body" name="form">
-                <div class="row">
-                    <div class="col-lg-12">
-                            <div class="form-group">
-                                <label>Nome da Proposta</label>
-                                <input type="text" class="form-control" ng-model="proposta.nome" required>
-                            </div>
-                    </div>
-                                                
-                </div>    
-                <div class="row">
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Data de Início</label>
-                                <input type="datetime" class="form-control" ng-model="proposta.dataInicio.data" required>
-                            </div>
-                    </div>                                
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Hora de Início</label>
-                                <input type="time" class="form-control" ng-model="proposta.dataInicio.hora" required>
-                            </div>
-                    </div>   
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Data de Fim</label>
-                                <input type="datetime" class="form-control" ng-model="proposta.dataFim.data" required>
-                            </div>
-                    </div>                                
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Hora de Fim</label>
-                                <input type="time" class="form-control" ng-model="proposta.dataFim.hora" required>
-                            </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Mínimo de Cotas(Un)</label>
-                                <input type="number" class="form-control" min="0" step="0.0001" ng-model="proposta.minCotas" required>
-                            </div>
-                    </div>                                
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Máximo de Cotas(Un)</label>
-                                <input type="number" class="form-control" min="0" step="0.0001" ng-model="proposta.maxCotas" required>
-                            </div>
-                    </div>   
-                    <div class="col-lg-3">
-                            <div class="form-group">
-                                <label>Taxa de Participação(%)</label>
-                                <input type="number" class="form-control" min="0" max="100" step="0.0001" ng-model="proposta.percentLucro" required>
-                            </div>
-                    </div>                                
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <label>Descrição</label>
-                        <textarea class="form-control" rows="3" ng-model="proposta.descricao" required></textarea>
-                    </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <fieldset class="col-lg-12">
-                        <legend>Validação de Segurança</legend>
-                        <div class="col-lg-3">
-                            <br/>
-                            <button class="btn btn-primary">Solicitar cód. de validação</button>
-                        </div>
-                        <div class="col-lg-9">
-                            <div class="form-group">
-                                <label>Cód. Recebido</label>
-                                <input type="text" class="form-control" ng-model="token.token" required>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="row">
-                    <fieldset class="col-lg-12">
-                        <legend></legend>
-                        <div class="col-lg-12">
-                            <button class="btn btn-primary">Cancelar Proposta</button>
-                         
-                            <button class="btn btn-primary" ng-disabled="!form.$valid">Salvar Proposta</button>
-                        
-                            <button class="btn btn-primary" ng-disabled="!form.$valid">Ativar Proposta</button>
-                        </div>
-
-                    </fieldset>
-                </div>                                                       
-            </form>
-             <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- /.col-lg-12 -->
-</div>
-<!-- /.row -->
-
-
-
+ <div class="panel panel-default">
+     <div class="panel-heading">
+         Hover Rows
+     </div>
+     <!-- /.panel-heading -->
+     <div class="panel-body">
+         <div class="table-responsive">
+             <table class="table table-hover">
+                 <thead>
+                     <tr>
+                         <th>#</th>
+                         <th>First Name</th>
+                         <th>Last Name</th>
+                         <th>Username</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td>1</td>
+                         <td>Mark</td>
+                         <td>Otto</td>
+                         <td>@mdo</td>
+                     </tr>
+                     <tr>
+                         <td>2</td>
+                         <td>Jacob</td>
+                         <td>Thornton</td>
+                         <td>@fat</td>
+                     </tr>
+                     <tr>
+                         <td>3</td>
+                         <td>Larry</td>
+                         <td>the Bird</td>
+                         <td>@twitter</td>
+                     </tr>
+                 </tbody>
+             </table>
+         </div>
+         <!-- /.table-responsive -->
+     </div>
+     <!-- /.panel-body -->
+ </div>
+ <!-- /.panel -->

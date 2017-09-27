@@ -9,7 +9,7 @@ picPagesApp.controller('criarativoController', ['$scope', '$http', function($sco
         };
 	$scope.cadastrarAtivo = function(ativo){
 
-		$http.post('/ativo', ativo, null).then(function (response) {
+		$http.post('/ativo', ativo).then(function (response) {
 				if (response.status == 200){
 					alert("Cadastro efetuado com sucesso.");
 					
@@ -37,6 +37,7 @@ picPagesApp.controller('criarativoController', ['$scope', '$http', function($sco
             return;
         }
         else{
+        	$scope.ativo.id = null;
             $scope.cadastrarAtivo($scope.ativo);
         }
     }

@@ -37,8 +37,8 @@ public class AtivoController {
 	
 
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<HttpStatus> save(@RequestBody AtivoData ativoData, Long ativoId) {
-		if(ativoId == null){
+	public ResponseEntity<HttpStatus> save(@RequestBody AtivoData ativoData) {
+		if(ativoData.getId() == null){
 			try {
 				ativoService.salvar(ativoPopulate.toModel(ativoData));	
 			} catch (PicException e) {
@@ -53,8 +53,9 @@ public class AtivoController {
 		else {
 			try {			
 				Ativo ativo = new Ativo();
-				ativo = ativoDao.pesquisarPorId(ativoId);
+				ativo = ativoDao.pesquisarPorId((Long) ativoData.getId());
 				ativo = ativoPopulate.toModel(ativoData);
+				ativo.setId(ativoData.getId());
 				ativoService.atualizar(ativo);
 			
 			}
