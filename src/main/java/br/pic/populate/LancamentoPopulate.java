@@ -37,6 +37,7 @@ public class LancamentoPopulate implements PicPopulate<Lancamento, LancamentoDat
 		lancamento.setTipoLancamento(data.getTipoLancamento());
 		lancamento.setEstadoLancamento(data.getEstadoLancamento());
 		lancamento.setAtivo(ativoPopulate.toModel(data.getAtivoData()));
+		lancamento.setData(data.getData());
 		lancamento.setContaPrincipal(contaPrincipalPopulate.toModel(data.getContaPrincipalData()));
 		lancamento.setProposta(propostaPopulate.toModel(data.getPropostaData()));
 		lancamento.setOperador(operadorPopulate.toModel(data.getOperador()));
@@ -64,6 +65,7 @@ public class LancamentoPopulate implements PicPopulate<Lancamento, LancamentoDat
 		lancamentoData.setQtdeLancada(model.getQtdeLancada());
 		lancamentoData.setTipoLancamento(model.getTipoLancamento());
 		lancamentoData.setValorTotalLanc(model.getValorTotalLanc());
+		lancamentoData.setData(model.getData());
 		
 		EstadoLancamento estadoLancamento = EstadoLancamento.getPorCodigo(model.getEstadoLancamento());
 		if(estadoLancamento != null) {

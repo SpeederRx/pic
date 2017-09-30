@@ -1,5 +1,7 @@
 package br.pic.model.data;
 
+import java.util.Date;
+
 public class LancamentoData {
 	
 	private Long id;
@@ -13,6 +15,7 @@ public class LancamentoData {
 	private OperadorData operador;
 	private Integer estadoLancamento;
 	private String estadoLancamentoString;
+	private Date data;
 	
 	public Long getId() {
 		return id;
@@ -79,6 +82,12 @@ public class LancamentoData {
 	}
 	public void setEstadoLancamentoString(String estadoLancamentoString) {
 		this.estadoLancamentoString = estadoLancamentoString;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
 	}
 	
 	
