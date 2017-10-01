@@ -43,7 +43,10 @@ public class LancamentoService implements PicService<Lancamento>{
 			throw new PicException("Tipo do Lancamento nao pode ser nulo.");
 		} if(obj.getEstadoLancamento() == null) {
 			throw new PicException("Estado do Lancamento nao pode ser nulo.");
+		}if(obj.getData() == null) {
+			throw new PicException("Data nao pode ser nula.");
 		}
+		
 		contaPrincipalService.validar(obj.getContaPrincipal());
 		ativoService.validar(obj.getAtivo());
 		propostaService.validar(obj.getProposta());

@@ -1,5 +1,7 @@
 package br.pic.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,6 +50,9 @@ public class Lancamento {
 	
 	@Column(name = "ESTADO_LANCAMENTO")
 	private Integer estadoLancamento;
+	
+	@Column(name = "DATA")
+	private Date data;
 
 
 	public Long getId() {
@@ -147,6 +152,16 @@ public class Lancamento {
 
 	public void setEstadoLancamento(Integer estadoLancamento) {
 		this.estadoLancamento = estadoLancamento;
+	}
+
+
+	public Date getData() {
+		return data;
+	}
+
+
+	public void setData(Date data) {
+		this.data = data;
 	}
 	
 			
