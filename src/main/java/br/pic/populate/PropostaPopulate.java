@@ -20,6 +20,7 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		
 		Proposta proposta = new Proposta();
 		
+		proposta.setId(data.getId());
 		proposta.setNome(data.getNome());
 		proposta.setTipoProposta(data.getTipoProposta());
 		proposta.setDataInicio(data.getDataInicio());

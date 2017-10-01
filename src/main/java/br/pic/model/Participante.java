@@ -33,11 +33,11 @@ public class Participante {
 	private Double cotas;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_SOCIO", insertable = false, updatable = false)
+	@JoinColumn(name = "ID_SOCIO", insertable = true, updatable = false)
 	private Socio socio;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_PROPOSTA")
+	@JoinColumn(name = "ID_PROPOSTA",  insertable = true)
 	private Proposta proposta;
 
 	public Long getId() {

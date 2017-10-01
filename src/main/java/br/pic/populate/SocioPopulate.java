@@ -21,6 +21,7 @@ public class SocioPopulate implements PicPopulate<Socio, SocioData> {
 		}
 		Socio socio = new Socio();
 		
+		socio.setId(data.getId());
 		socio.setClassificacao(data.getClassificacao());
 		socio.setContaMovimento(data.getContaMovimento());
 		socio.setCpf(data.getCpf());

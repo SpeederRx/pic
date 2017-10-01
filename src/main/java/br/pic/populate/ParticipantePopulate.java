@@ -15,7 +15,7 @@ public class ParticipantePopulate implements PicPopulate<Participante, Participa
 	
 	@Inject
 	private SocioPopulate socioPopulate;
-	
+		
 
 	@Override
 	public Participante toModel(ParticipanteData data) {
@@ -31,6 +31,7 @@ public class ParticipantePopulate implements PicPopulate<Participante, Participa
 		participante.setDataVinculo(data.getDataVinculo());
 		participante.setProponente(data.getProponente());
 		participante.setProposta(propostaPopulate.toModel(data.getPropostaData()));
+		
 		participante.setSocio(socioPopulate.toModel(data.getSocioData()));
 
 		return participante;
