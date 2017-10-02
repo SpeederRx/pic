@@ -26,8 +26,8 @@
                                 <tbody ng-repeat="proposta in propostas">
                                     <tr class="odd gradeX">
                                         <td>{{proposta.nome}}</td>
-                                        <td>{{proposta.dataInicio | date}}</td>
-                                        <td>{{proposta.dataFim | date}}</td>
+                                        <td>{{proposta.dataInicio | date:"dd-MM-yyyy HH:mm:ss"}}</td>
+                                        <td>{{proposta.dataFim | date:"dd/MM/yyyy HH:mm:ss"}}</td>
                                         <td class="center">{{proposta.percentLucro}}</td>
                                         <td class="center">{{proposta.estadoPropostaString}}</td>
                                     </tr>

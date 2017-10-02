@@ -16,7 +16,7 @@
                     <div class="col-lg-12">
                             <div class="form-group">
                                 <label>Nome da Proposta</label>
-                                <input type="text" class="form-control" ng-model="participante.propostaData.nome" required>
+                                <input type="text" class="form-control" maxlength=50 ng-model="participante.propostaData.nome" required>
                             </div>
                     </div>
                                                 
@@ -25,25 +25,25 @@
                     <div class="col-lg-3">
                             <div class="form-group">
                                 <label>Data de Início</label>
-                                <input type="date" class="form-control" ng-model="participante.propostaData.dataInicio" required>
+                                <input type="date" class="form-control" ng-model="dataInicio" required>
                             </div>
                     </div>                                
                     <div class="col-lg-3">
                             <div class="form-group">
                                 <label>Hora de Início</label>
-                                <input type="time" class="form-control" ng-model="teste.i" required>
+                                <input type="time" class="form-control" ng-model="horaInicio" required>
                             </div>
                     </div>   
                     <div class="col-lg-3">
                             <div class="form-group">
                                 <label>Data de Fim</label>
-                                <input type="date" class="form-control" ng-model="participante.propostaData.dataFim" required>
+                                <input type="date" class="form-control" ng-model="dataFim" required>
                             </div>
                     </div>                                
                     <div class="col-lg-3">
                             <div class="form-group">
                                 <label>Hora de Fim</label>
-                                <input type="time" class="form-control" ng-model="teste.f" required>
+                                <input type="time" class="form-control" ng-model="horaFim" required>
                             </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <label>Descrição</label>
-                        <textarea class="form-control" rows="3" ng-model="participante.propostaData.descricao" required></textarea>
+                        <textarea class="form-control" rows="2" maxlength=255 ng-model="participante.propostaData.descricao" required></textarea>
                     </div>
                 </div>
                 <br/>

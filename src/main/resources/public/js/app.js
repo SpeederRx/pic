@@ -132,6 +132,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 	};
 
 	$scope.validarSocio = function(){
+			$scope.socio.dataNasc = $scope.socio.dataNasc + " " + "00:00:00";
 			$scope.socio.classificacao = 1.0;
 			if($scope.socio == null){
 				alert("Por favor preencha o formulário");

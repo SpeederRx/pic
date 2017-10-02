@@ -1,7 +1,6 @@
 package br.pic.controller;
 
 import javax.inject.Inject;
-import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 
 import org.springframework.http.HttpHeaders;
@@ -14,13 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.pic.dao.SocioDao;
-import br.pic.email.PicEmailConfig;
 import br.pic.exception.PicException;
 import br.pic.model.Participante;
 import br.pic.model.Socio;
 import br.pic.model.data.ParticipanteData;
 import br.pic.populate.ParticipantePopulate;
-import br.pic.populate.PropostaPopulate;
 import br.pic.populate.SocioPopulate;
 import br.pic.service.ParticipanteService;
 import br.pic.service.PropostaService;
@@ -37,18 +34,12 @@ public class ParticipanteController {
 	
 	@Inject
 	private PropostaService propostaService;
-	
-	@Inject
-	private PropostaPopulate propostaPopulate;
 
 	@Inject
 	private SocioPopulate socioPopulate;
 	
 	@Inject
 	private ParticipantePopulate participantePopulate;
-	
-	@Inject
-	private PicEmailConfig emailConfig;
 	
 	
 	@RequestMapping(value="/novaproposta", method=RequestMethod.POST)
@@ -66,19 +57,20 @@ public class ParticipanteController {
 			Participante participante = participantePopulate.toModel(participanteData);
 			propostaService.salvar(participante.getProposta());
 			participanteService.salvar(participante);	
-			emailConfig.EnviarEmail(participanteData.getSocioData());
+			//emailConfig.EnviarEmail(participanteData.getSocioData());
 			
 		} catch (PicException e) {
             HttpHeaders headers = new HttpHeaders();
             headers.add("Erro", e.getLocalizedMessage());
             ResponseEntity<HttpStatus> response = new ResponseEntity<HttpStatus>(headers, HttpStatus.BAD_REQUEST);
             return response;
-		} catch (MessagingException e) {
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Erro", e.getLocalizedMessage());
-            ResponseEntity<HttpStatus> response = new ResponseEntity<HttpStatus>(headers, HttpStatus.BAD_REQUEST);
-            return response;
-		}
+		} 
+//            catch (MessagingException e) {
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.add("Erro", e.getLocalizedMessage());
+//            ResponseEntity<HttpStatus> response = new ResponseEntity<HttpStatus>(headers, HttpStatus.BAD_REQUEST);
+//            return response;
+//		}
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);		
 
 	}
