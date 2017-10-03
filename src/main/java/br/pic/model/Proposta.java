@@ -10,7 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -57,8 +59,10 @@ public class Proposta {
 	
 	@Column(name = "PERCENT_LUCRO")
 	private Double percentLucro;
-	
-	@Column(name = "ID_ATIVO")
+
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ID_ATIVO", updatable = false, insertable = true)
 	private Ativo ativo;
 
 	public Long getId() {
