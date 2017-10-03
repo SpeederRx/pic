@@ -38,6 +38,8 @@ public class PropostaService implements PicService<Proposta>{
 			throw new PicException("Descricao nao pode ser nula.");
 		} if(obj.getPercentLucro() == null){
 			throw new PicException("Percentual de Lucro nao pode ser nulo.");
+		} if(obj.getValorCorrenteAtivo() == null){
+			throw new PicException("Valor Corrente do Ativo nao pode ser nulo.");
 		}
 		
 	}

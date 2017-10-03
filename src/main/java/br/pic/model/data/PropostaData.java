@@ -19,6 +19,7 @@ public class PropostaData {
 	private List<ParticipanteData> participantesData;
 	private String descricao;
 	private Double percentLucro;
+	private Double valorCorrenteAtivo;
 	
 	public Long getId() {
 		return id;
@@ -103,6 +104,12 @@ public class PropostaData {
 	}
 	public void setPercentLucro(Double percentLucro) {
 		this.percentLucro = percentLucro;
+	}
+	public Double getValorCorrenteAtivo() {
+		return valorCorrenteAtivo;
+	}
+	public void setValorCorrenteAtivo(Double valorCorrenteAtivo) {
+		this.valorCorrenteAtivo = valorCorrenteAtivo;
 	}
 	
 	

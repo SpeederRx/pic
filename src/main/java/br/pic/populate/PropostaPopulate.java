@@ -30,6 +30,7 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		proposta.setEstadoProposta(data.getEstadoProposta());
 		proposta.setDescricao(data.getDescricao());
 		proposta.setPercentLucro(data.getPercentLucro());
+		proposta.setValorCorrenteAtivo(data.getValorCorrenteAtivo());
 		
 		return proposta;
 	}
@@ -53,6 +54,7 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		propostaData.setEstadoProposta(model.getEstadoProposta());
 		propostaData.setDescricao(model.getDescricao());
 		propostaData.setPercentLucro(model.getPercentLucro());
+		propostaData.setValorCorrenteAtivo(model.getValorCorrenteAtivo());
 		
 		EstadoProposta estadoProposta = EstadoProposta.getPorCodigo(model.getEstadoProposta());
 		if(estadoProposta != null) {

@@ -43,6 +43,9 @@ public class Proposta {
 	@Column(name = "ESTADO_PROPOSTA")
 	private Integer estadoProposta;
 	
+	@Column(name = "VALOR_CORRENTE_ATIVO")
+	private Double valorCorrenteAtivo;
+	
 	@OneToMany(mappedBy = "proposta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Lancamento> lancamentos;
 	
@@ -149,6 +152,14 @@ public class Proposta {
 
 	public void setPercentLucro(Double percentLucro) {
 		this.percentLucro = percentLucro;
+	}
+
+	public Double getValorCorrenteAtivo() {
+		return valorCorrenteAtivo;
+	}
+
+	public void setValorCorrenteAtivo(Double valorCorrenteAtivo) {
+		this.valorCorrenteAtivo = valorCorrenteAtivo;
 	}
 	
 	
