@@ -1,5 +1,7 @@
  package br.pic.populate;
 
+import javax.inject.Inject;
+
 import org.springframework.context.annotation.Configuration;
 
 import br.pic.commun.EstadoProposta;
@@ -10,6 +12,8 @@ import br.pic.model.data.PropostaData;
 @Configuration
 public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 	
+	@Inject
+	private AtivoPopulate ativoPopulate;
 	
 	@Override
 	public Proposta toModel(PropostaData data) {
@@ -31,6 +35,7 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		proposta.setDescricao(data.getDescricao());
 		proposta.setPercentLucro(data.getPercentLucro());
 		proposta.setValorCorrenteAtivo(data.getValorCorrenteAtivo());
+		proposta.setAtivo(ativoPopulate.toModel(data.getAtivoData()));
 		
 		return proposta;
 	}
@@ -55,6 +60,8 @@ public class PropostaPopulate implements PicPopulate<Proposta, PropostaData> {
 		propostaData.setDescricao(model.getDescricao());
 		propostaData.setPercentLucro(model.getPercentLucro());
 		propostaData.setValorCorrenteAtivo(model.getValorCorrenteAtivo());
+		propostaData.setAtivoData(ativoPopulate.toData(model.getAtivo()));
+		
 		
 		EstadoProposta estadoProposta = EstadoProposta.getPorCodigo(model.getEstadoProposta());
 		if(estadoProposta != null) {

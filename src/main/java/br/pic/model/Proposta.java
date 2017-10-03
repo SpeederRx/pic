@@ -57,6 +57,9 @@ public class Proposta {
 	
 	@Column(name = "PERCENT_LUCRO")
 	private Double percentLucro;
+	
+	@Column(name = "ID_ATIVO")
+	private Ativo ativo;
 
 	public Long getId() {
 		return id;
@@ -160,6 +163,14 @@ public class Proposta {
 
 	public void setValorCorrenteAtivo(Double valorCorrenteAtivo) {
 		this.valorCorrenteAtivo = valorCorrenteAtivo;
+	}
+
+	public Ativo getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Ativo ativo) {
+		this.ativo = ativo;
 	}
 	
 	

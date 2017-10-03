@@ -13,6 +13,9 @@ import br.pic.util.StringUtils;
 public class PropostaService implements PicService<Proposta>{
 	
 	@Inject
+	private AtivoService ativoService;
+	
+	@Inject
 	private PropostaDao propostaDao;
 
 	@Override
@@ -41,6 +44,7 @@ public class PropostaService implements PicService<Proposta>{
 		} if(obj.getValorCorrenteAtivo() == null){
 			throw new PicException("Valor Corrente do Ativo nao pode ser nulo.");
 		}
+		ativoService.validar(obj.getAtivo());
 		
 	}
 
