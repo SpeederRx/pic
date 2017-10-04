@@ -22,7 +22,6 @@ public class ContaPrincipalPopulate implements PicPopulate<ContaPrincipal, Conta
 		}
 		ContaPrincipal contaPrincipal = new ContaPrincipal();
 		
-		contaPrincipal.setCodigoConta(data.getCodigoConta());
 		contaPrincipal.setDataAbertura(data.getDataAbertura());
 		contaPrincipal.setEstadoConta(data.getEstadoConta());
 		contaPrincipal.setSaldoAtual(data.getSaldoAtual());
@@ -44,7 +43,6 @@ public class ContaPrincipalPopulate implements PicPopulate<ContaPrincipal, Conta
 		contaPrincipalData.setEstadoConta(model.getEstadoConta());
 		contaPrincipalData.setSaldoAtual(model.getSaldoAtual());
 		contaPrincipalData.setSocioData(socioPopulate.toData(model.getSocio()));
-		contaPrincipalData.setCodigoConta(model.getCodigoConta());
 		
 		EstadoConta estadoConta = EstadoConta.getPorCodigo(model.getEstadoConta());
 		if(estadoConta != null) {

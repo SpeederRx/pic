@@ -66,7 +66,8 @@ public class PicDaoImp<T> implements PicDao<T> {
 			if(t.getClass().getMethods()[i].getName().startsWith("get") && !t.getClass().getMethods()[i].getName().contains("Class")){
 				if(method.invoke(t, new Object[] {}) != null) {
 					String fieldName = method.getName().substring(3, method.getName().length());
-					sql.append(" and o." + fieldName.toLowerCase() + " = :" + fieldName);
+					fieldName = fieldName.substring(0, 1).toLowerCase() + fieldName.substring(1, fieldName.length());
+					sql.append(" and o." + fieldName + " = :" + fieldName);
 				}
 			}
 		}
@@ -77,6 +78,7 @@ public class PicDaoImp<T> implements PicDao<T> {
 			if(t.getClass().getMethods()[i].getName().startsWith("get") && !t.getClass().getMethods()[i].getName().contains("Class")){
 				if(method.invoke(t, new Object[] {}) != null) {
 					String fieldName = method.getName().substring(3, method.getName().length());
+					fieldName = fieldName.substring(0, 1).toLowerCase() + fieldName.substring(1, fieldName.length());
 					query.setParameter(fieldName, method.invoke(t, new Object[] {}));
 				}
 			}

@@ -24,7 +24,7 @@ public class ContaPrincipal {
 	private Long id;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ID_SOCIO", updatable = false, insertable = false)
+	@JoinColumn(name = "ID_SOCIO", updatable = false, insertable = true)
 	private Socio socio;
 	
 	@Column(name = "DATA_ABERTURA")
@@ -39,9 +39,6 @@ public class ContaPrincipal {
 	@Column(name = "ESTADO_CONTA")
 	private Integer estadoConta;
 	
-	@Column(name = "CODIGO_CONTA")
-	private String codigoConta;
-
 	public Long getId() {
 		return id;
 	}
@@ -90,14 +87,5 @@ public class ContaPrincipal {
 		this.estadoConta = estadoConta;
 	}
 
-	public String getCodigoConta() {
-		return codigoConta;
-	}
-
-	public void setCodigoConta(String codigoConta) {
-		this.codigoConta = codigoConta;
-	}
-
-	
 	
 }

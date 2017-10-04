@@ -1,5 +1,8 @@
 package br.pic.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Configuration;
@@ -60,6 +63,13 @@ public class PropostaService implements PicService<Proposta>{
 	public void atualizar(Proposta obj) throws PicException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Proposta> pesquisarPorAtributo(Proposta obj) throws PicException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException, SecurityException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,4 +1,4 @@
-package br.pic.email;
+package br.pic.email.service;
 
 import java.util.Properties;
 
@@ -9,12 +9,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
-import br.pic.model.data.SocioData;
+import br.pic.model.Socio;
 
 @Configuration
-public class PicEmailConfig {
+public class PicEmailSocioServiceImpl implements PicEmailSocioService{
 
-	public void EnviarEmail(SocioData socioData) throws MessagingException {
+	@Override
+	public void enviarEmailCadastroSocio(Socio socio) throws MessagingException {
+
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
 	    mailSender.setPort(587);
@@ -33,12 +35,15 @@ public class PicEmailConfig {
 		
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);
-		helper.setTo(socioData.getEmail());
+		helper.setTo(socio.getEmail());
 		helper.setFrom("picdonotreply@gmail.com");
-		helper.setText(socioData.getNome() + "  Seja bem vindo ao PIC");
+		helper.setText(socio.getNome() + "  Seja bem vindo ao PIC");
 		helper.setSubject("Bem Vindo ao PIC");
 
 		mailSender.send(message);
 		
+			
 	}
+	
+	
 }

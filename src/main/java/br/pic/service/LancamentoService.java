@@ -1,5 +1,8 @@
 package br.pic.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Configuration;
@@ -64,6 +67,13 @@ public class LancamentoService implements PicService<Lancamento>{
 	public void atualizar(Lancamento obj) throws PicException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Lancamento> pesquisarPorAtributo(Lancamento obj) throws PicException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException, SecurityException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

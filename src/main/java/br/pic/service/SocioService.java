@@ -1,24 +1,36 @@
 package br.pic.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.inject.Inject;
+import javax.mail.MessagingException;
+import javax.transaction.Transactional;
 
 import org.springframework.context.annotation.Configuration;
 
 import br.pic.dao.SocioDao;
+import br.pic.dao.SocioDaoImp;
+import br.pic.email.service.PicEmailSocioService;
 import br.pic.exception.PicException;
 import br.pic.model.Socio;
 import br.pic.util.StringUtils;
 
 @Configuration
+@Transactional(rollbackOn=Throwable.class)
 public class SocioService implements PicService<Socio>{
 
 	@Inject
-	private SocioDao socioDao;
+	private SocioDaoImp socioDao;
 	
 	@Inject
 	private EnderecoService enderecoService;
 	
+	@Inject
+	private PicEmailSocioService picEmailSocioService;
 	
+	@Inject
+	private ContaPrincipalService contaPrincipalService;
 	
 	@Override
 	public void validar(Socio obj) throws PicException {
@@ -49,10 +61,31 @@ public class SocioService implements PicService<Socio>{
 	
 	@Override
 	public void salvar(Socio obj) throws PicException {
-		validar(obj);
+		try {
+			Socio filtro = new Socio();
+			filtro.setCpf(obj.getCpf());
+			List<Socio> socios = pesquisarPorAtributo(filtro);
+			if(socios != null && !socios.isEmpty()){
+				throw new PicException("Já existe um sócio com este CPF cadastrado.");
+			}
+			
+			validar(obj);
+			socioDao.salvar(obj);
+			
+			contaPrincipalService.criarNovaContaPrincipal(obj);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new PicException("Erro ao cadastrar novo sócio.");
+		}
 		
+		try {
+			picEmailSocioService.enviarEmailCadastroSocio(obj);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+			throw new PicException("Erro ao enviar e-mail de cadastro.");
+		}
 		
-		socioDao.salvar(obj);
 	}
 	
 	
@@ -61,5 +94,9 @@ public class SocioService implements PicService<Socio>{
 		socioDao.atualizar(obj);
 	}
 	
+	@Override
+	public List<Socio> pesquisarPorAtributo(Socio obj) throws PicException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException {
+		return socioDao.pesquisarPorAtributo(obj);
+	}
 	
 }

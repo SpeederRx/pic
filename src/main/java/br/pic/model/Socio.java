@@ -51,6 +51,9 @@ public class Socio {
 	
 	@Column(name = "TIPO_ENVIO")
 	private Integer tipoEnvio;
+	
+	@OneToOne(mappedBy="socio")
+	private ContaPrincipal contaPrincipal;
 
 	public Long getId() {
 		return id;

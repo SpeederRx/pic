@@ -10,7 +10,6 @@ public class ContaPrincipalData {
 	private Date dataAbertura;
 	private Double saldoAtual;
 	private List<LancamentoData> lancamentosData;
-	private String codigoConta;
 	private Integer estadoConta;
 	private String estadoContaString;
 	
@@ -43,12 +42,6 @@ public class ContaPrincipalData {
 	}
 	public void setLancamentosData(List<LancamentoData> lancamentosData) {
 		this.lancamentosData = lancamentosData;
-	}
-	public String getCodigoConta() {
-		return codigoConta;
-	}
-	public void setCodigoConta(String codigoConta) {
-		this.codigoConta = codigoConta;
 	}
 	public Integer getEstadoConta() {
 		return estadoConta;

@@ -1,5 +1,8 @@
 package br.pic.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Configuration;
@@ -55,6 +58,13 @@ public class OperadorService implements PicService<Operador>{
 	public void atualizar(Operador obj) throws PicException {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<Operador> pesquisarPorAtributo(Operador obj) throws PicException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException, SecurityException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

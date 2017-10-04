@@ -1,5 +1,8 @@
 package br.pic.service;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +44,13 @@ public class AtivoService implements PicService<Ativo>{
 	public void atualizar(Ativo obj) throws PicException {
 		validar(obj);
 		ativoDao.atualizar(obj);		
+	}
+
+	@Override
+	public List<Ativo> pesquisarPorAtributo(Ativo obj) throws PicException, IllegalAccessException,
+			IllegalArgumentException, InvocationTargetException, SecurityException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
