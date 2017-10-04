@@ -24,7 +24,6 @@ import br.pic.service.PropostaService;
 
 @RestController
 @Transactional(rollbackOn=Throwable.class)
-@RequestMapping(value="proposta")
 public class PropostaController {
 
 	@Inject
@@ -35,7 +34,7 @@ public class PropostaController {
 	
 	@Inject PropostaDao propostaDao;
 	
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(value="proposta", method=RequestMethod.POST)
 	public ResponseEntity<HttpStatus> save(@RequestBody PropostaData propostaData) {
 		
 		try {
@@ -50,7 +49,7 @@ public class PropostaController {
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(value="proposta", method=RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<PropostaData>> propostas(){
 		
@@ -69,6 +68,32 @@ public class PropostaController {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	@RequestMapping(value="propostassocio", method=RequestMethod.POST)
+	public ResponseEntity<List<PropostaData>> getPropostasSocio(@RequestBody Long idSocio) {
+		
+		List<PropostaData> propostasData = new ArrayList<PropostaData>();
+		try {
+			
+			List<Proposta> propostas = propostaDao.pesquisarTodos();
+			
+			
+			for(Proposta proposta: propostas){
+				propostasData.add(propostaPopulate.toData(proposta));
+				
+			}
+			
+			return new ResponseEntity<List<PropostaData>>(propostasData, HttpStatus.OK);
+		} 
+		
+		catch (IllegalArgumentException | SecurityException e) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Erro", e.getLocalizedMessage());
+            return new ResponseEntity<List<PropostaData>>(propostasData, HttpStatus.BAD_REQUEST);
+		}
+		
+		
 	}
 }
 

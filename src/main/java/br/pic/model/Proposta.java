@@ -60,8 +60,7 @@ public class Proposta {
 	@Column(name = "PERCENT_LUCRO")
 	private Double percentLucro;
 
-
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "ID_ATIVO", updatable = false, insertable = true)
 	private Ativo ativo;
 

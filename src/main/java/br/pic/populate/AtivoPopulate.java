@@ -18,6 +18,7 @@ public class AtivoPopulate implements PicPopulate<Ativo, AtivoData> {
 		}
 		Ativo ativo = new Ativo();
 		
+		ativo.setId(data.getId());
 		ativo.setDescricao(data.getDescricao());
 		ativo.setTipoAtivo(data.getTipoAtivo());
 		

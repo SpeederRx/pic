@@ -1,6 +1,24 @@
-picPagesApp.controller('cadastrarpropostavendaController', ['$scope', function($scope) {
+picPagesApp.controller('cadastrarpropostavendaController', ['$scope', '$http', function($scope, $http) {
 	var now = new Date;
 	
+    $scope.getPropostas = function(){
+        $http.post('/propostassocio', 4).then(function (response) {
+            if (response.status == 200){
+                $scope.propostas = response.data;
+                $.each($scope.propostas, function(i, val) {
+                    $scope.propostas[i].dataInicio = new Date($scope.propostas[i].dataInicio);
+                    $scope.propostas[i].dataFim = new Date($scope.propostas[i].dataInicio);
+                });
+                
+                console.log($scope.propostas);
+            }
+        },
+        function (response) {
+            alert('Ocorreu um erro= ' + response.status);
+            console.log('Nao Deu boa' + response.status);
+        });
+     };
+    $scope.getPropostas();
 	$scope.socio = {
 			id: 4,
 			cpf: '05728048900',
@@ -42,9 +60,11 @@ picPagesApp.controller('cadastrarpropostavendaController', ['$scope', function($
 		$scope.participante.proponente = true;
 		$scope.participante.propostaData.dataInicio = $scope.dataInicio+" "+ $scope.horaInicio+":00";
 		$scope.participante.propostaData.dataFim = $scope.dataFim+" "+ $scope.horaFim+":00";
-		
+		$scope.participante.propostaData.tipoProposta = 2;
+		$scope.participante.propostaData.ativoData = $scope.participante.propostaCompra.ativoData;
+		$scope.participante.propostaData.percentLucro = $scope.participante.propostaCompra.percentLucro;
 		$scope.cadastrarProposta($scope.participante);
-		
+				
 		console.log("Guayraçu");
 	};
 	
@@ -57,6 +77,6 @@ picPagesApp.controller('cadastrarpropostavendaController', ['$scope', function($
 	$scope.ativarProposta = function(){
 		$scope.participante.propostaData.estadoProposta = 2;
 		$scope.validarParticipante();
-	}	
+	}
 	
 }]);

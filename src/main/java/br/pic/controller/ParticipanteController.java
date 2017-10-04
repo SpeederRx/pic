@@ -49,7 +49,6 @@ public class ParticipanteController {
 		Socio socio = new Socio();
 		socio = socioDao.pesquisarPorId(participanteData.getSocioData().getId());
 		participanteData.setSocioData(socioPopulate.toData(socio));
-		participanteData.getPropostaData().setTipoProposta(1);
 		participanteData.getSocioData().setId(socio.getId());
 		
 		try {

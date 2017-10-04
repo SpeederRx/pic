@@ -1,6 +1,19 @@
 picPagesApp.controller('cadastrarpropostacompraController', ['$scope', '$http', function($scope, $http) {
 	var now = new Date;
 	
+    $scope.getAtivos = function(){
+        $http.get('/ativo').then(function (response) {
+            if (response.status == 200){
+                $scope.ativos = response.data;
+                console.log($scope.ativos);
+            }
+        },
+        function (response) {
+            alert('Ocorreu um erro= ' + response.status);
+            console.log('Nao Deu boa' + response.status);
+        });
+     };
+    $scope.getAtivos();
 	$scope.socio = {
 			id: 4,
 			cpf: '05728048900',
@@ -42,9 +55,9 @@ picPagesApp.controller('cadastrarpropostacompraController', ['$scope', '$http', 
 		$scope.participante.proponente = true;
 		$scope.participante.propostaData.dataInicio = $scope.dataInicio+" "+ $scope.horaInicio+":00";
 		$scope.participante.propostaData.dataFim = $scope.dataFim+" "+ $scope.horaFim+":00";
-		
+		$scope.participante.propostaData.tipoProposta = 1;
 		$scope.cadastrarProposta($scope.participante);
-		
+				
 		console.log("Guayraçu");
 	};
 	
@@ -57,6 +70,6 @@ picPagesApp.controller('cadastrarpropostacompraController', ['$scope', '$http', 
 	$scope.ativarProposta = function(){
 		$scope.participante.propostaData.estadoProposta = 2;
 		$scope.validarParticipante();
-	}	
+	}
 	
 }]);
