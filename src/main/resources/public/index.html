@@ -496,13 +496,17 @@ style="z-index: 3; max-width: 50px; max-height: 50px; white-space: nowrap;">
               <div class="form-group col-sm-6">
                 <input type="text" class="form-control" name="dtNasc" id="InputDtNasc" placeholder="Data de Nascimento" ng-model="socio.dataNasc" onfocus="(this.type='date')" data-toggle="tooltip" data-placement="right" title="Data de Nascimento">
               </div>
-              <div class="form-group col-sm-6">
+              <div class="form-group col-sm-12">
                 <input type="text" class="form-control" name="nome" id="InputNome"  placeholder="nome" ng-model="socio.nome">
               </div>
               <div class="form-group col-sm-6">
                   <span ng-show="cadForm.email.$error.email">Endereço de email inválido</span>
                 <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Endereço de e-mail" ng-model="socio.email">
               </div>
+              <div class="form-group col-sm-6">
+                <input type="email" class="form-control" name="validaEmail" id="InputValidaEmail" data-ng-model="validaEmail" data-ng-blur="compararEmail()" placeholder="Repita o endereço de e-mail">
+              <span>{{resultadoEmail}}</span>
+              </div>              
               <div class="form-group col-sm-6">
                 <input type="password" class="form-control" name="senha" ng-model="socio.senha" ng-model-options="{ getterSetter: true }" id="InputSenha" placeholder="Senha" onkeyup="javascript:verifica()">
               </div>

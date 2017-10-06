@@ -115,6 +115,21 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 			return false;
 		}
 	};
+	
+	$scope.compararEmail = function(){
+		if($scope.validaEmail == null || $scope.validaEmail != $scope.socio.email){
+			$scope.resultadoEmail = 'Os e-mails digitados não correspondem ou o endereço digitado não é válido';
+			return false;
+		}
+		else if($scope.validaEmail == $scope.socio.email){
+			$scope.resultadoEmail = '';
+			return true;
+		}
+		else{
+			$scope.resultadoEmail = 'Os e-mails digitados não correspondem';
+			return false;
+		}
+	};
 
 	$scope.cadastrarSocio = function(socio){
 
@@ -145,6 +160,11 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 
 			if($scope.compararSenha() == false){
 				alert("Por favor verifique as senhas digitadas");
+				return;
+			}
+			
+			if($scope.compararEmail() == false){
+				alert("Por favor verifique o endereço de email.");
 				return;
 			}
 			
@@ -195,7 +215,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
 			
 		
 	};
-
+/*Funcao apenas para testes*/
 	$scope.efetuarLogin = function(){
         
             $http.post('/login', $scope.socio).then(function (response) {
@@ -210,6 +230,7 @@ appIndex.controller('indexController', ['$scope', '$http', function($scope, $htt
                 console.log('Nao Deu boa' + response.status);
             });
 };
+/*Fim da funcao apenas para testes*/
 
 	$scope.validarCarteira = function(){
 

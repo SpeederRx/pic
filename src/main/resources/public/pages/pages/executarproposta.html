@@ -1,0 +1,52 @@
+
+<div class="row">
+	<div class="col-lg-12">
+		<h1 class="page-header">{{nome}}</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="col-lg-6">
+					<div class="form-group">
+						<label>Pesquisar</label>
+						<input ng-model="searchText">
+					</div>
+				</div>
+			Propostas Aguardando execução
+			</div>
+			<div class="row">
+			</div> 
+			<div class="panel-body">
+				<table width="100%" class="table table-hover" id="visaoGeral">
+					<thead>
+						<tr>
+							<th class="col-lg-3 alert-link" ng-click="sortBy('nome')"> 
+								Nome                                       
+							</th>
+							<th>Data Inicial</th>
+							<th>Data Final</th>
+							<th>Percentual</th>
+							<th>Status</th>
+							<th>Ação</th>
+						</tr>
+					</thead>
+					<tbody ng-repeat="proposta in propostas | filter:searchText | orderBy:propertyName:reverse">
+						<tr class="odd gradeX">
+							<td>{{proposta.nome}}</td>
+							<td>{{proposta.dataInicio | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+							<td>{{proposta.dataFim | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+							<td class="center">{{proposta.percentLucro| number:4}}%</td>
+							<td class="center">{{proposta.estadoPropostaString}}</td>
+							<td class="center"><input type="button" value="Executar Proposta" data-ng-click="executarproposta(proposta)"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

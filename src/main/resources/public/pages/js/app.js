@@ -49,6 +49,20 @@ var views = [
         caminho: "pages",
         nomeArquivo: "consultarAtivos",
         controller: "consultarAtivos"
+    },
+    {
+        state: "executarproposta",
+        url: "executarproposta",
+        caminho: "pages",
+        nomeArquivo: "executarproposta",
+        controller: "executarproposta"
+    },
+    {
+        state: "finalizarexecucao",
+        url: "finalizarexecucao",
+        caminho: "pages",
+        nomeArquivo: "finalizarexecucao",
+        controller: "finalizarexecucao"
     }
 
 ];

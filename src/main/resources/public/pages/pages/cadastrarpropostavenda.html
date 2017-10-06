@@ -26,7 +26,7 @@
 	                        <label>Dados do ativo da proposta</label>
 	                        <p>Nome do ativo: {{participante.propostaCompra.ativoData.descricao}}<br/>
 	                        Valor de Compra: R${{participante.propostaCompra.valorCorrenteAtivo}}<br/>
-	                        Adquirido em: {{participante.propostaCompra.dataFim | date : "dd.MM.y"}}</p>
+	                        Adquirido em: {{participante.propostaCompra.dataFim | date : "dd/MM/y"}}</p>
 	                        <input type="hidden" ng-model="participante.propostaData.ativoData" value="{{participante.propostaCompra.ativoData}}"/>
 	                    	<input type="hidden" ng-model="participante.propostaData.percentLucro" value="{{participante.propostaCompra.percentLucro}}"/>
 	                    </div>
