@@ -35,6 +35,33 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <div class="row" ng-show="propostaAtiva">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Executar proposta {{propostaAtiva.nome}}
+                        </div>
+                        <div class="panel-body">
+	                        <div class="form-group col-sm-6">
+	                        	<label class="footer-heading">Valor do Ativo na transação (R$):</label>
+	                        	<input class="form-control" type="number" ng-model="propostaAtiva.valorCorrenteAtivo">
+	                        </div>
+		                    <div class="form-group col-sm-6">
+	                        	<label class="footer-heading">Quantidade de ativos:</label>
+	                        	<input class="form-control" type="number" ng-model="propostaAtiva.minCotas">
+	                        </div>
+	                        <div class="form-group col-sm-6">
+	                        	<input type="button" class="btn btn-primary" value="Executar Proposta" ng-click="executarProposta()"/>
+	                        </div>
+	                        <div class="form-group col-sm-6">
+	                        	<input type="button" class="btn btn-primary" value="Voltar" ng-click="limparExecucao()"/>
+	                        </div>
+                        </div>
+                        
+                    </div>
+          		</div>
+            </div>
+            <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -96,7 +123,7 @@
                                         		<i ng-class="{'glyphicon glyphicon-triangle-top':isSortUp('dataFim'),'glyphicon glyphicon-triangle-bottom':isSortDown('dataFim')}"></i>
                                         	</span>
                                         </th>
-                                        <th>Acao</th>
+                                        <th>Ação</th>
 
                                     </tr>
                                 </thead>
@@ -108,7 +135,7 @@
 
                                         <td>{{proposta.dataInicio | date:"dd/MM/yyyy HH:mm:ss"}}</td>
                                         <td>{{proposta.dataFim | date:"dd/MM/yyyy HH:mm:ss"}}</td>
-										<td class="center"><input type="button" value="Executar Proposta" data-ng-click="executarproposta(proposta)"></td>
+										<td class="center"><input type="button" value="Executar Proposta" data-ng-click="carregarProposta(proposta)"></td>
                                     </tr>
                                 </tbody>
                             </table>

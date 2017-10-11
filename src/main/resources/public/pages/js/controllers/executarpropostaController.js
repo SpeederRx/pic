@@ -1,4 +1,5 @@
 picPagesApp.controller('executarpropostaController', ['$scope', '$http', function($scope, $http) {
+
 /*Valores para o combo de opcoes de pesquisa por data */	
 		$scope.dateSearchOptions = [
 			{
@@ -83,5 +84,27 @@ picPagesApp.controller('executarpropostaController', ['$scope', '$http', functio
         	$scope.propostasPorData = $scope.propostas;
         }
         /*Fim de Função para filtrar propostas por data*/
-
+        
+        
+        $scope.carregarProposta= function(proposta){
+        	$scope.propostaAtiva = proposta;
+        }
+        
+        $scope.limparExecucao= function(){
+        	$scope.propostaAtiva = null;
+        }
+        $scope.executarProposta = function(){
+            $http.post('/executarproposta', $scope.propostaAtiva).then(function (response) {
+                if (response.status == 200){
+                	$scope.propostaAtiva = null;
+                	$scope.obterPropostas();
+                    console.log("Proposta Executada");
+                    alert("A proposta" + $scope.propostaAtiva.nome + "foi executada com sucesso");
+                }
+            },
+            function (response) {
+                alert('Ocorreu um erro= ' + $scope.propostaAtiva.nome + " não pode ser concluída");
+                console.log('Nao Deu boa' + response.status);
+            });
+         };
 }]);

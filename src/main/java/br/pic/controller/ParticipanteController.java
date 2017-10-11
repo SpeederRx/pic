@@ -54,7 +54,7 @@ public class ParticipanteController {
 		try {
 			
 			Participante participante = participantePopulate.toModel(participanteData);
-			propostaService.salvar(participante.getProposta());
+			//propostaService.salvar(participante.getProposta());
 			participanteService.salvar(participante);	
 			//emailConfig.EnviarEmail(participanteData.getSocioData());
 			
